@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Raaisa\\Documents\\MapboxAR4\\Mapbox AR\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
+            "outputFile": "C:\\Users\\Raaisa\\StudioProjects\\RAEN\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-h720dp-v13\\values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Raaisa\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.1.0.aar\\c3d4d44443a2645ebc70d88e4bbc73b6\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "C:\\Users\\Raaisa\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.1.0.aar\\c53abc675a1dc67e0cb96b702a431f4b\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
