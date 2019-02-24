@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AddText"
+    tools:showIn="@layout/activity_add_text">
+
+    <AutoCompleteTextView
+        android:id="@+id/autoCompleteTextView"
+        android:layout_width="283dp"
+        android:layout_height="148dp"
+        android:layout_marginStart="51dp"
+        android:layout_marginTop="181dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="85dp"
+        android:text="Enter text"
+        app:layout_constraintBottom_toTopOf="@+id/add_text_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/add_text_button"
+        android:layout_width="203dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="49dp"
+        android:text="Add Text to Sticky Note"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="91dp" />
+
+
+</android.support.constraint.ConstraintLayout>

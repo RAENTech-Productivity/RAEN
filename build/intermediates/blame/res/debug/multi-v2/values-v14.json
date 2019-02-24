@@ -14,16 +14,16 @@
                         "endOffsets": "149"
                     },
                     "to": {
-                        "startLines": "7",
+                        "startLines": "10",
                         "startColumns": "4",
-                        "startOffsets": "331",
-                        "endLines": "8",
+                        "startOffsets": "482",
+                        "endLines": "11",
                         "endColumns": "8",
-                        "endOffsets": "426"
+                        "endOffsets": "577"
                     }
                 },
                 {
-                    "source": "C:\\Users\\Raaisa\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.1.0.aar\\2b0ac887ac590ea8449ea1d5748400fe\\res\\values-v14\\values-v14.xml",
+                    "source": "C:\\Users\\Raaisa\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.1.0.aar\\ed846827c13e305b7fcd723bdb7e301f\\res\\values-v14\\values-v14.xml",
                     "from": {
                         "startLines": "2,7,8,9,15,21,22,23,24,25,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
@@ -33,12 +33,23 @@
                         "endOffsets": "326,397,480,890,1312,1432,1564,1684,1747,1901,1964,2096"
                     },
                     "to": {
-                        "startLines": "2,9,10,11,17,23,24,25,26,27,30,31",
+                        "startLines": "5,12,13,14,20,26,27,28,29,30,33,34",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,431,502,585,995,1417,1537,1669,1789,1852,2006,2069",
-                        "endLines": "6,9,10,16,22,23,24,25,26,29,30,31",
+                        "startOffsets": "206,582,653,736,1146,1568,1688,1820,1940,2003,2157,2220",
+                        "endLines": "9,12,13,19,25,26,27,28,29,32,33,34",
                         "endColumns": "12,70,82,12,12,119,131,119,62,12,62,131",
-                        "endOffsets": "326,497,580,990,1412,1532,1664,1784,1847,2001,2064,2196"
+                        "endOffsets": "477,648,731,1141,1563,1683,1815,1935,1998,2152,2215,2347"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Raaisa\\.gradle\\caches\\transforms-1\\files-1.1\\gamesparks-android-client-sdk-0.9.0.aar\\8dd71aee2596bbb208bdd001ff0de6cd\\res\\values-v14\\values-v14.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "201"
                     }
                 }
             ]
