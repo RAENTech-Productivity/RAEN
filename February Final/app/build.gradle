@@ -49,7 +49,6 @@ dependencies {
 }
 
 apply plugin: 'com.google.ar.sceneform.plugin'
-apply plugin: 'com.android.application'
 sceneform.asset('sampledata/models/andy.obj',
         'default',
         'sampledata/models/andy.sfa',
