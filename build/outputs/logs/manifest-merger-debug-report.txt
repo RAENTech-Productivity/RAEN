@@ -4,18 +4,18 @@ ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:2:1-
 INJECTED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:2:1-32:12
 INJECTED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:2:1-32:12
 INJECTED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:2:1-32:12
-MERGED from [:animated-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.0.aar\5714a17230cf886007d605933735c294\AndroidManifest.xml:17:1-24:12
-MERGED from [:appcompat-v7-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.0.aar\c53abc675a1dc67e0cb96b702a431f4b\AndroidManifest.xml:17:1-27:12
-MERGED from [:lighting_estimation:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\lighting_estimation.aar\59a132ce87904f87a16c200320d99e37\AndroidManifest.xml:6:1-15:12
-MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:2:1-21:12
-MERGED from [:support-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.0.aar\9355788755811c0464c04c33f4a19792\AndroidManifest.xml:17:1-27:12
-MERGED from [:support-core-ui-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.0.aar\8e2e56f1be5136979a6912f0776480e5\AndroidManifest.xml:17:1-27:12
-MERGED from [:support-core-utils-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.0.aar\9bd62ba42a339ab23fb354f83373c50a\AndroidManifest.xml:17:1-27:12
-MERGED from [:support-media-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.0.aar\c30bd1357dac11c617b1eadb0c797661\AndroidManifest.xml:17:1-27:12
-MERGED from [:support-v4-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.0.aar\6dd3493f182cb323802f65d6651f5002\AndroidManifest.xml:17:1-27:12
-MERGED from [:support-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.0.aar\d78a46252235c119649cacfbaaf041a1\AndroidManifest.xml:17:1-25:12
-MERGED from [:unityandroidpermissions:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\unityandroidpermissions.aar\15131f16a67888c171650816bf2623b0\AndroidManifest.xml:2:1-11:12
-MERGED from [:unitygar:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\unitygar.aar\890d93af41dfafe1a1a322d64d1f4118\AndroidManifest.xml:2:1-11:12
+MERGED from [:animated-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.0.aar\79df8dda387492308395ad4e8fdd14f4\AndroidManifest.xml:17:1-24:12
+MERGED from [:appcompat-v7-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.0.aar\2b0ac887ac590ea8449ea1d5748400fe\AndroidManifest.xml:17:1-27:12
+MERGED from [:lighting_estimation:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\lighting_estimation.aar\5746944d3c6e31aed35f49adf1351893\AndroidManifest.xml:6:1-15:12
+MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:2:1-21:12
+MERGED from [:support-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.0.aar\04874327475110a3a709a2f5e3e79a0a\AndroidManifest.xml:17:1-27:12
+MERGED from [:support-core-ui-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.0.aar\00db95b3b5197a8fc2ad4496777de00f\AndroidManifest.xml:17:1-27:12
+MERGED from [:support-core-utils-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.0.aar\c3f312339963c2113bf194766b51344b\AndroidManifest.xml:17:1-27:12
+MERGED from [:support-media-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.0.aar\c773e447d857858c2f0df17831aac8b4\AndroidManifest.xml:17:1-27:12
+MERGED from [:support-v4-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.0.aar\7e01d8f90b55ab0d3745ed1ce42a1f9b\AndroidManifest.xml:17:1-27:12
+MERGED from [:support-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.0.aar\00862d4c005e69da3fdf91a277668d98\AndroidManifest.xml:17:1-25:12
+MERGED from [:unityandroidpermissions:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\unityandroidpermissions.aar\f189561a8a30c8cdd97f38ac1a7b3b7e\AndroidManifest.xml:2:1-11:12
+MERGED from [:unitygar:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\unitygar.aar\9dffde278ca39c7a2bcfe7856beef7d6\AndroidManifest.xml:2:1-11:12
 INJECTED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:2:1-32:12
 INJECTED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:2:1-32:12
 INJECTED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:2:1-32:12
@@ -51,24 +51,24 @@ ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:3:3-
 		ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:3:135-160
 application
 ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:4:3-17:17
-MERGED from [:animated-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.0.aar\5714a17230cf886007d605933735c294\AndroidManifest.xml:22:5-20
-MERGED from [:animated-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.0.aar\5714a17230cf886007d605933735c294\AndroidManifest.xml:22:5-20
-MERGED from [:appcompat-v7-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.0.aar\c53abc675a1dc67e0cb96b702a431f4b\AndroidManifest.xml:25:5-20
-MERGED from [:appcompat-v7-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.0.aar\c53abc675a1dc67e0cb96b702a431f4b\AndroidManifest.xml:25:5-20
-MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:12:5-14:19
-MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:12:5-14:19
-MERGED from [:support-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.0.aar\9355788755811c0464c04c33f4a19792\AndroidManifest.xml:25:5-20
-MERGED from [:support-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.0.aar\9355788755811c0464c04c33f4a19792\AndroidManifest.xml:25:5-20
-MERGED from [:support-core-ui-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.0.aar\8e2e56f1be5136979a6912f0776480e5\AndroidManifest.xml:25:5-20
-MERGED from [:support-core-ui-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.0.aar\8e2e56f1be5136979a6912f0776480e5\AndroidManifest.xml:25:5-20
-MERGED from [:support-core-utils-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.0.aar\9bd62ba42a339ab23fb354f83373c50a\AndroidManifest.xml:25:5-20
-MERGED from [:support-core-utils-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.0.aar\9bd62ba42a339ab23fb354f83373c50a\AndroidManifest.xml:25:5-20
-MERGED from [:support-media-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.0.aar\c30bd1357dac11c617b1eadb0c797661\AndroidManifest.xml:25:5-20
-MERGED from [:support-media-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.0.aar\c30bd1357dac11c617b1eadb0c797661\AndroidManifest.xml:25:5-20
-MERGED from [:support-v4-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.0.aar\6dd3493f182cb323802f65d6651f5002\AndroidManifest.xml:25:5-20
-MERGED from [:support-v4-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.0.aar\6dd3493f182cb323802f65d6651f5002\AndroidManifest.xml:25:5-20
-MERGED from [:support-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.0.aar\d78a46252235c119649cacfbaaf041a1\AndroidManifest.xml:23:5-20
-MERGED from [:support-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.0.aar\d78a46252235c119649cacfbaaf041a1\AndroidManifest.xml:23:5-20
+MERGED from [:animated-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.0.aar\79df8dda387492308395ad4e8fdd14f4\AndroidManifest.xml:22:5-20
+MERGED from [:animated-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.0.aar\79df8dda387492308395ad4e8fdd14f4\AndroidManifest.xml:22:5-20
+MERGED from [:appcompat-v7-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.0.aar\2b0ac887ac590ea8449ea1d5748400fe\AndroidManifest.xml:25:5-20
+MERGED from [:appcompat-v7-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.0.aar\2b0ac887ac590ea8449ea1d5748400fe\AndroidManifest.xml:25:5-20
+MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:12:5-14:19
+MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:12:5-14:19
+MERGED from [:support-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.0.aar\04874327475110a3a709a2f5e3e79a0a\AndroidManifest.xml:25:5-20
+MERGED from [:support-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.0.aar\04874327475110a3a709a2f5e3e79a0a\AndroidManifest.xml:25:5-20
+MERGED from [:support-core-ui-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.0.aar\00db95b3b5197a8fc2ad4496777de00f\AndroidManifest.xml:25:5-20
+MERGED from [:support-core-ui-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.0.aar\00db95b3b5197a8fc2ad4496777de00f\AndroidManifest.xml:25:5-20
+MERGED from [:support-core-utils-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.0.aar\c3f312339963c2113bf194766b51344b\AndroidManifest.xml:25:5-20
+MERGED from [:support-core-utils-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.0.aar\c3f312339963c2113bf194766b51344b\AndroidManifest.xml:25:5-20
+MERGED from [:support-media-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.0.aar\c773e447d857858c2f0df17831aac8b4\AndroidManifest.xml:25:5-20
+MERGED from [:support-media-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.0.aar\c773e447d857858c2f0df17831aac8b4\AndroidManifest.xml:25:5-20
+MERGED from [:support-v4-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.0.aar\7e01d8f90b55ab0d3745ed1ce42a1f9b\AndroidManifest.xml:25:5-20
+MERGED from [:support-v4-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.0.aar\7e01d8f90b55ab0d3745ed1ce42a1f9b\AndroidManifest.xml:25:5-20
+MERGED from [:support-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.0.aar\00862d4c005e69da3fdf91a277668d98\AndroidManifest.xml:23:5-20
+MERGED from [:support-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.0.aar\00862d4c005e69da3fdf91a277668d98\AndroidManifest.xml:23:5-20
 	android:label
 		ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:4:92-124
 	android:icon
@@ -141,34 +141,34 @@ uses-sdk
 ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:18:3-45
 INJECTED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:18:3-45
 INJECTED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:18:3-45
-MERGED from [:animated-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.0.aar\5714a17230cf886007d605933735c294\AndroidManifest.xml:20:5-44
-MERGED from [:animated-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.0.aar\5714a17230cf886007d605933735c294\AndroidManifest.xml:20:5-44
-MERGED from [:appcompat-v7-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.0.aar\c53abc675a1dc67e0cb96b702a431f4b\AndroidManifest.xml:21:5-23:78
-MERGED from [:appcompat-v7-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.0.aar\c53abc675a1dc67e0cb96b702a431f4b\AndroidManifest.xml:21:5-23:78
-MERGED from [:lighting_estimation:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\lighting_estimation.aar\59a132ce87904f87a16c200320d99e37\AndroidManifest.xml:11:5-13:41
-MERGED from [:lighting_estimation:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\lighting_estimation.aar\59a132ce87904f87a16c200320d99e37\AndroidManifest.xml:11:5-13:41
-MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:8:5-10:41
-MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:8:5-10:41
-MERGED from [:support-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.0.aar\9355788755811c0464c04c33f4a19792\AndroidManifest.xml:21:5-23:58
-MERGED from [:support-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.0.aar\9355788755811c0464c04c33f4a19792\AndroidManifest.xml:21:5-23:58
-MERGED from [:support-core-ui-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.0.aar\8e2e56f1be5136979a6912f0776480e5\AndroidManifest.xml:21:5-23:58
-MERGED from [:support-core-ui-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.0.aar\8e2e56f1be5136979a6912f0776480e5\AndroidManifest.xml:21:5-23:58
-MERGED from [:support-core-utils-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.0.aar\9bd62ba42a339ab23fb354f83373c50a\AndroidManifest.xml:21:5-23:61
-MERGED from [:support-core-utils-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.0.aar\9bd62ba42a339ab23fb354f83373c50a\AndroidManifest.xml:21:5-23:61
-MERGED from [:support-media-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.0.aar\c30bd1357dac11c617b1eadb0c797661\AndroidManifest.xml:21:5-23:63
-MERGED from [:support-media-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.0.aar\c30bd1357dac11c617b1eadb0c797661\AndroidManifest.xml:21:5-23:63
-MERGED from [:support-v4-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.0.aar\6dd3493f182cb323802f65d6651f5002\AndroidManifest.xml:21:5-23:54
-MERGED from [:support-v4-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.0.aar\6dd3493f182cb323802f65d6651f5002\AndroidManifest.xml:21:5-23:54
-MERGED from [:support-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.0.aar\d78a46252235c119649cacfbaaf041a1\AndroidManifest.xml:21:5-43
-MERGED from [:support-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.0.aar\d78a46252235c119649cacfbaaf041a1\AndroidManifest.xml:21:5-43
-MERGED from [:unityandroidpermissions:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\unityandroidpermissions.aar\15131f16a67888c171650816bf2623b0\AndroidManifest.xml:7:5-9:41
-MERGED from [:unityandroidpermissions:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\unityandroidpermissions.aar\15131f16a67888c171650816bf2623b0\AndroidManifest.xml:7:5-9:41
-MERGED from [:unitygar:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\unitygar.aar\890d93af41dfafe1a1a322d64d1f4118\AndroidManifest.xml:7:5-9:41
-MERGED from [:unitygar:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\unitygar.aar\890d93af41dfafe1a1a322d64d1f4118\AndroidManifest.xml:7:5-9:41
+MERGED from [:animated-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.0.aar\79df8dda387492308395ad4e8fdd14f4\AndroidManifest.xml:20:5-44
+MERGED from [:animated-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.1.0.aar\79df8dda387492308395ad4e8fdd14f4\AndroidManifest.xml:20:5-44
+MERGED from [:appcompat-v7-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.0.aar\2b0ac887ac590ea8449ea1d5748400fe\AndroidManifest.xml:21:5-23:78
+MERGED from [:appcompat-v7-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.0.aar\2b0ac887ac590ea8449ea1d5748400fe\AndroidManifest.xml:21:5-23:78
+MERGED from [:lighting_estimation:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\lighting_estimation.aar\5746944d3c6e31aed35f49adf1351893\AndroidManifest.xml:11:5-13:41
+MERGED from [:lighting_estimation:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\lighting_estimation.aar\5746944d3c6e31aed35f49adf1351893\AndroidManifest.xml:11:5-13:41
+MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:8:5-10:41
+MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:8:5-10:41
+MERGED from [:support-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.0.aar\04874327475110a3a709a2f5e3e79a0a\AndroidManifest.xml:21:5-23:58
+MERGED from [:support-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-compat-25.1.0.aar\04874327475110a3a709a2f5e3e79a0a\AndroidManifest.xml:21:5-23:58
+MERGED from [:support-core-ui-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.0.aar\00db95b3b5197a8fc2ad4496777de00f\AndroidManifest.xml:21:5-23:58
+MERGED from [:support-core-ui-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.1.0.aar\00db95b3b5197a8fc2ad4496777de00f\AndroidManifest.xml:21:5-23:58
+MERGED from [:support-core-utils-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.0.aar\c3f312339963c2113bf194766b51344b\AndroidManifest.xml:21:5-23:61
+MERGED from [:support-core-utils-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.1.0.aar\c3f312339963c2113bf194766b51344b\AndroidManifest.xml:21:5-23:61
+MERGED from [:support-media-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.0.aar\c773e447d857858c2f0df17831aac8b4\AndroidManifest.xml:21:5-23:63
+MERGED from [:support-media-compat-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.1.0.aar\c773e447d857858c2f0df17831aac8b4\AndroidManifest.xml:21:5-23:63
+MERGED from [:support-v4-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.0.aar\7e01d8f90b55ab0d3745ed1ce42a1f9b\AndroidManifest.xml:21:5-23:54
+MERGED from [:support-v4-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-v4-25.1.0.aar\7e01d8f90b55ab0d3745ed1ce42a1f9b\AndroidManifest.xml:21:5-23:54
+MERGED from [:support-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.0.aar\00862d4c005e69da3fdf91a277668d98\AndroidManifest.xml:21:5-43
+MERGED from [:support-vector-drawable-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.1.0.aar\00862d4c005e69da3fdf91a277668d98\AndroidManifest.xml:21:5-43
+MERGED from [:unityandroidpermissions:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\unityandroidpermissions.aar\f189561a8a30c8cdd97f38ac1a7b3b7e\AndroidManifest.xml:7:5-9:41
+MERGED from [:unityandroidpermissions:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\unityandroidpermissions.aar\f189561a8a30c8cdd97f38ac1a7b3b7e\AndroidManifest.xml:7:5-9:41
+MERGED from [:unitygar:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\unitygar.aar\9dffde278ca39c7a2bcfe7856beef7d6\AndroidManifest.xml:7:5-9:41
+MERGED from [:unitygar:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\unitygar.aar\9dffde278ca39c7a2bcfe7856beef7d6\AndroidManifest.xml:7:5-9:41
 INJECTED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:18:3-45
 INJECTED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:18:3-45
 	tools:overrideLibrary
-		ADDED from [:appcompat-v7-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.0.aar\c53abc675a1dc67e0cb96b702a431f4b\AndroidManifest.xml:23:9-75
+		ADDED from [:appcompat-v7-25.1.0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.1.0.aar\2b0ac887ac590ea8449ea1d5748400fe\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:18:13-42
 		INJECTED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml
@@ -183,14 +183,14 @@ ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:19:3
 		ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:19:17-49
 uses-permission#android.permission.INTERNET
 ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:20:3-65
-MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:16:5-67
-MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:16:5-67
+MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:16:5-67
+MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:16:5-67
 	android:name
 		ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:20:20-62
 uses-permission#android.permission.ACCESS_FINE_LOCATION
 ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:21:3-77
-MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:17:5-79
-MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:17:5-79
+MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:17:5-79
+MERGED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:17:5-79
 	android:name
 		ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:21:20-74
 uses-feature#android.hardware.location.gps
@@ -252,14 +252,14 @@ ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:31:3
 	android:name
 		ADDED from C:\Users\Raaisa\StudioProjects\RAEN\src\main\AndroidManifest.xml:31:17-58
 service#com.mapbox.services.android.telemetry.service.TelemetryService
-ADDED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:13:9-97
+ADDED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:13:9-97
 	android:name
-		ADDED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:13:18-95
+		ADDED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:13:18-95
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:18:5-80
+ADDED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:18:5-80
 	android:name
-		ADDED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:18:22-78
+		ADDED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:18:22-78
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:19:5-78
+ADDED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:19:5-78
 	android:name
-		ADDED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\8c4c0387a14f616529618461ce883843\AndroidManifest.xml:19:22-76
+		ADDED from [:mapbox-android-telemetry-2-1-0:] C:\Users\Raaisa\.gradle\caches\transforms-1\files-1.1\mapbox-android-telemetry-2-1-0.aar\910eebab258791e5424dadcb8cc6b781\AndroidManifest.xml:19:22-76
