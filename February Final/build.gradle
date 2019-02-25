@@ -20,6 +20,9 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven {
+            url "http://repo.gamesparks.net/mvn"
+        }
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.1.2'

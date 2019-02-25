@@ -4,7 +4,18 @@
             "outputFile": "C:\\Users\\Raaisa\\StudioProjects\\RAEN\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Raaisa\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.1.0.aar\\ed846827c13e305b7fcd723bdb7e301f\\res\\values-v11\\values-v11.xml",
+                    "source": "C:\\Users\\Raaisa\\.gradle\\caches\\transforms-1\\files-1.1\\gamesparks-android-client-sdk-0.9.0.aar\\fea534b3482eb7fb5c576f5a3a306545\\res\\values-v11\\values-v11.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "187"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Raaisa\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.1.0.aar\\830a85ab24c83ef7d23949bfb8125047\\res\\values-v11\\values-v11.xml",
                     "from": {
                         "startLines": "2,8,14,20,26,32,38,39,43,47,48,52,56,57,61,66,71,76,78,80,81,82,135,189",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -20,17 +31,6 @@
                         "endLines": "10,16,22,28,34,40,41,45,49,50,54,58,59,63,68,73,78,80,82,83,84,137,191,192",
                         "endColumns": "12,12,12,12,12,12,88,12,12,100,12,12,102,12,12,12,12,12,12,70,82,12,12,90",
                         "endOffsets": "606,1031,1459,1885,2312,2737,2826,3072,3321,3422,3674,3929,4032,4285,4693,5113,5535,5642,5771,5842,5925,9864,13946,14037"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Raaisa\\.gradle\\caches\\transforms-1\\files-1.1\\gamesparks-android-client-sdk-0.9.0.aar\\8dd71aee2596bbb208bdd001ff0de6cd\\res\\values-v11\\values-v11.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "187"
                     }
                 }
             ]

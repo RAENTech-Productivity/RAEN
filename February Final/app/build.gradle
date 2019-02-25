@@ -47,6 +47,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation "com.google.ar.sceneform.ux:sceneform-ux:1.0.0"
     compile 'com.gamesparks.sdk:gamesparks-android-client-sdk:+'
+    compile 'com.google.gms:google-services:3.0.0'
 }
 
 apply plugin: 'com.google.ar.sceneform.plugin'
