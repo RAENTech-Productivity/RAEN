@@ -4,6 +4,8 @@ import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.LocationProvider;
 import android.os.Bundle;
 import android.provider.Settings.Secure;
 import android.support.design.widget.FloatingActionButton;
@@ -24,8 +26,14 @@ import com.gamesparks.sdk.api.autogen.GSResponseBuilder;
 import com.gamesparks.sdk.api.autogen.GSRequestBuilder.LogEventRequest;
 import com.gamesparks.sdk.api.autogen.GSResponseBuilder.LogEventResponse;
 import com.gamesparks.sdk.api.autogen.GSTypes.*;
-//import com.gamesparks.sdk.api.GSEventConsumer;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
+import android.widget.Toast;
 
+import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 public class AddText extends AppCompatActivity {
@@ -39,76 +47,57 @@ public class AddText extends AppCompatActivity {
         Log.i("GOTHEREGS", "started GS");
     }
 
+    LocationManager locationManager;
+    LocationListener locationListener;
+
+//    @Override
+    public void onProviderDisabled(String provider) {
+        Toast.makeText(
+                AddText.this, "Please Enable GPS and Internet",
+                Toast.LENGTH_SHORT).show();
+    }
+
+//    @Override
+    public void onProviderEnabled(String provider) {
+        Toast.makeText(
+                AddText.this, "GPS and Internet Enabled",
+                Toast.LENGTH_SHORT).show();
+    }
+
+    public Location checkPermissionLocation(){
+        boolean permission;
+        Location location;
+        if (ContextCompat.checkSelfPermission(getApplicationContext(),
+                android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            permission = false;
+            location = null;
+            ActivityCompat.requestPermissions(
+                    this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION,},
+                    101);
+
+
+        }
+        else{
+            permission = true;
+            location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+            onProviderEnabled(LocationManager.NETWORK_PROVIDER);
+//            location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+        }
+        return location;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_text);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        locationManager =  (LocationManager)getSystemService(LOCATION_SERVICE);
 
 
         GSAndroidPlatform.initialise(this, "u374201md1E4", "ktbBEnAi7UjgzEFdlY8s9E892AqZoVnR", "device", false, true);
         Log.i("GOTHEREGS", "initial GS");
-
-//        GSAndroidPlatform.gs().setOnAvailable(new GSEventConsumer<Boolean>() {
-//            @Override
-//            public void onEvent(Boolean available) {
-//
-//                if (available) {
-//                    //If we connect, authenticate our player
-//                    GSAndroidPlatform.gs().getRequestBuilder().createAuthenticationRequest().setUserName("username").setPassword("password").send(new GSEventConsumer<GSResponseBuilder.AuthenticationResponse>() {
-//                        @Override
-//                        public void onEvent(GSResponseBuilder.AuthenticationResponse authenticationResponse) {
-//
-//                            if(!authenticationResponse.hasErrors()){
-//                                //Do something when we authenticate
-//                                Log.i("GOTHERE:)", "the connection worked");
-//
-//                            }
-//                            else{
-//                                Log.i("GOTHERE:)", "failed");
-//                            }
-//
-//                        }
-//                    });
-//                }
-//            }
-//        });
-
-//        Secure.getString(getContext().getContentResolver(),
-//                Secure.ANDROID_ID);
-        final TelephonyManager tm = (TelephonyManager) getBaseContext().getSystemService(Context.TELEPHONY_SERVICE);
-
-        final String tmDevice, tmSerial, androidId;
-//        int MY_PERMISSIONS_PHONE_STATE =0;
-//        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
-//                != PackageManager.PERMISSION_GRANTED) {
-//            Log.i("GOTHEREPermission", "permission?");
-//            // Permission is not granted
-//            ActivityCompat.requestPermissions(this,
-//                    new String[]{Manifest.permission.READ_CONTACTS},
-//                    MY_PERMISSIONS_PHONE_STATE);
-//        }
-//        else {
-//            tmDevice = "" + tm.getDeviceId();
-//            tmSerial = "" + tm.getSimSerialNumber();
-//            androidId = "" + android.provider.Settings.Secure.getString(getContentResolver(), android.provider.Settings.Secure.ANDROID_ID);
-//            UUID deviceUuid = new UUID(androidId.hashCode(), ((long)tmDevice.hashCode() << 32) | tmSerial.hashCode());
-//            String deviceId = deviceUuid.toString();
-//        }
-
-//        GSAndroidPlatform.gs().getRequestBuilder().createDeviceAuthenticationRequest()
-//                .send(authenticationResponse -> {
-//            if (!authenticationResponse.hasErrors()) {
-//                // reaches this point in the code
-//                Log.i("GOTHEREworked","Device Authenticated...");
-//                //tell message provider we have been authenticated
-//
-//            } else {
-//                Log.i("GOTHEREfailed","Error authenticating...");
-//            }
-//
-//        });
 
         GSAndroidPlatform.gs().setOnAvailable(new GSEventConsumer<Boolean>() {
             @Override
@@ -139,15 +128,6 @@ public class AddText extends AppCompatActivity {
         });
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
 
         Button btn = (Button)findViewById(R.id.add_text_button);
 
@@ -155,11 +135,30 @@ public class AddText extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.i("GOTHERECLICK", "button");
+                Location location = checkPermissionLocation();
+//                boolean permission = checkPermissionLocation();
+                double lat;
+                double lon;
+                double bearing;
+
+//                location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                if (location != null) {
+                    lat = location.getLatitude();
+
+                    lon = location.getLongitude();
+                    bearing = location.getBearing();
+                }
+                else{
+                    lat = 0;
+                    lon = 0;
+                    bearing = 0;
+                }
+
 
                 GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
                         .setEventKey("SAVE_GEO_MESSAGE")
-                        .setEventAttribute("LAT", "0.001")
-                        .setEventAttribute("LON", "0.001")
+                        .setEventAttribute("LAT", ""+ lat )
+                        .setEventAttribute("LON", "" + lon)
                         .setEventAttribute("TEXT", "android connect")
                         .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>()
                         {
@@ -179,24 +178,6 @@ public class AddText extends AppCompatActivity {
                         });
 
 
-//                GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest().setEventKey("setDetails")
-//                        .setEventAttribute("name", string)
-//                        .setEventAttribute("age", int)
-//                            .setEventAttribute("gender", string).send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>() {
-//                    @Override
-//                    public void onEvent(GSResponseBuilder.LogEventResponse logEventResponse) {
-//                        if(logEventResponse.hasErrors()){
-//                            //DO something
-//                        }
-//                        else{
-//                            //Do something
-//                        }
-//                    }
-//                });
-//            }
-//        }
-//    });
-
                 Log.i("GOTHERE", "about to start");
                 startActivity(new Intent(AddText.this, MainActivity.class));
                 Log.i("GOTHERE", "started activity");
@@ -204,4 +185,5 @@ public class AddText extends AppCompatActivity {
             }
         });
     }
+
 }
