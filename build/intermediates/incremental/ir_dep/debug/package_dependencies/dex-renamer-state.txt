@@ -1,4 +1,0 @@
-#Thu Feb 14 11:03:02 MST 2019
-base.0=C\:\\Users\\Raaisa\\StudioProjects\\RAEN\\build\\intermediates\\transforms\\dexMerger\\debug\\10
-path.0=classes.dex
-renamed.0=classes.dex

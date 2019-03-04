@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Raaisa\\StudioProjects\\RAEN\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
+            "outputFile": "C:\\Users\\akathait\\Desktop\\RAEN\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Raaisa\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.1.0.aar\\c53abc675a1dc67e0cb96b702a431f4b\\res\\values-v16\\values-v16.xml",
+                    "source": "C:\\Users\\akathait\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-25.1.0.aar\\8dab7332d338ab2d3e4411c49705d9e7\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

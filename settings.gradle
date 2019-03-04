@@ -1,2 +1,2 @@
-include ':app'
+include ':app', ':stickynote'
 project(':app').projectDir = new File('February Final/app')
