@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.gamesparks.sdk:gamesparks-android-client-sdk-0.9.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/gamesparks-android-client-sdk-0.9.0.aar/8dd71aee2596bbb208bdd001ff0de6cd/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/gamesparks-android-client-sdk-0.9.0.aar/8dd71aee2596bbb208bdd001ff0de6cd/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
