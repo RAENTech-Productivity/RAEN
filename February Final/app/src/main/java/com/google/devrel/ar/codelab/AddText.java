@@ -87,7 +87,6 @@ public class AddText extends AppCompatActivity {
 
         GSAndroidPlatform.initialise(this, "u374201md1E4", "ktbBEnAi7UjgzEFdlY8s9E892AqZoVnR", "device", false, true);
         Log.i("GOTHEREGS", "initial GS");
-
         GSAndroidPlatform.gs().setOnAvailable(new GSEventConsumer<Boolean>() {
             @Override
             public void onEvent(Boolean available) {
@@ -144,27 +143,27 @@ public class AddText extends AppCompatActivity {
                 }
 
 
-                GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
-                        .setEventKey("SAVE_GEO_MESSAGE")
-                        .setEventAttribute("LAT", ""+ lat )
-                        .setEventAttribute("LON", "" + lon)
-                        .setEventAttribute("TEXT", "gs connection")
-                        .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>()
-                        {
-                            @Override
-                            public void onEvent(GSResponseBuilder.LogEventResponse logEventResponse)
-                            {
-                                if (!logEventResponse.hasErrors()) {
-                                    //DO something
-                                    Log.i("GOTHERE", "the connection worked");
-                                } else {
-                                    Log.i("GOTHERE", "connection failed");
-                                    Log.i("GOTHEREDATA", logEventResponse.toString());
-                                }
-                                Log.i("GOTHEREDATA", "completed event");
-                            }
-
-                        });
+//                GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
+//                        .setEventKey("SAVE_GEO_MESSAGE")
+//                        .setEventAttribute("LAT", ""+ lat )
+//                        .setEventAttribute("LON", "" + lon)
+//                        .setEventAttribute("TEXT", "gs connection")
+//                        .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>()
+//                        {
+//                            @Override
+//                            public void onEvent(GSResponseBuilder.LogEventResponse logEventResponse)
+//                            {
+//                                if (!logEventResponse.hasErrors()) {
+//                                    //DO something
+//                                    Log.i("GOTHERE", "the connection worked");
+//                                } else {
+//                                    Log.i("GOTHERE", "connection failed");
+//                                    Log.i("GOTHEREDATA", logEventResponse.toString());
+//                                }
+//                                Log.i("GOTHEREDATA", "completed event");
+//                            }
+//
+//                        });
 
                 Log.i("GOTHERE", "about to start");
                 startActivity(new Intent(AddText.this, MainActivity.class));

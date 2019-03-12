@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RAEN.iml" filepath="$PROJECT_DIR$/RAEN.iml" />
       <module fileurl="file://$PROJECT_DIR$/February Final/app/app.iml" filepath="$PROJECT_DIR$/February Final/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stickynote/stickynote.iml" filepath="$PROJECT_DIR$/stickynote/stickynote.iml" />
     </modules>
   </component>
 </project>
