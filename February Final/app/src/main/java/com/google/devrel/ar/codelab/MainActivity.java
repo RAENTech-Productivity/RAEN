@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
 //                            String closest_five_notes;
 //                            String mod_list_of_notes = data.toString();
 
-/
+
                         Log.i("GOTHEREDATA", "AR completed event");
                     }
 
@@ -137,75 +137,78 @@ public class MainActivity extends AppCompatActivity {
         Log.i("GOTHERE", "the AR 6");
     }
 
-//    private String generateFilename() {
-//        String date =
-//                new SimpleDateFormat("yyyyMMddHHmmss", java.util.Locale.getDefault()).format(new Date());
-//        return Environment.getExternalStoragePublicDirectory(
-//                Environment.DIRECTORY_PICTURES) + File.separator + "Sceneform/" + date + "_screenshot.jpg";
-//    }
-//
-//    private void saveBitmapToDisk(Bitmap bitmap, String filename) throws IOException {
-//
-//        File out = new File(filename);
-//        if (!out.getParentFile().exists()) {
-//            out.getParentFile().mkdirs();
-//        }
-//        try (FileOutputStream outputStream = new FileOutputStream(filename);
-//             ByteArrayOutputStream outputData = new ByteArrayOutputStream()) {
-//            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputData);
-//            outputData.writeTo(outputStream);
-//            outputStream.flush();
-//            outputStream.close();
-//        } catch (IOException ex) {
-//            throw new IOException("Failed to save bitmap to disk", ex);
-//        }
-//    }
-//
-//    private void takePhoto() {
-//        final String filename = generateFilename();
-//        ArSceneView view = fragment.getArSceneView();
-//
-//        // Create a bitmap the size of the scene view.
-//        final Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(),
-//                Bitmap.Config.ARGB_8888);
-//
-//        // Create a handler thread to offload the processing of the image.
-//        final HandlerThread handlerThread = new HandlerThread("PixelCopier");
-//        handlerThread.start();
-//        // Make the request to copy.
-//        PixelCopy.request(view, bitmap, (copyResult) -> {
-//            if (copyResult == PixelCopy.SUCCESS) {
-//                try {
-//                    saveBitmapToDisk(bitmap, filename);
-//                } catch (IOException e) {
-//                    Toast toast = Toast.makeText(MainActivity.this, e.toString(),
-//                            Toast.LENGTH_LONG);
-//                    toast.show();
-//                    return;
-//                }
-//                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),
-//                        "Photo saved", Snackbar.LENGTH_LONG);
-//                snackbar.setAction("Open in Photos", v -> {
-//                    File photoFile = new File(filename);
-//
-//                    Uri photoURI = FileProvider.getUriForFile(MainActivity.this,
-//                            MainActivity.this.getPackageName() + ".ar.codelab.name.provider",
-//                            photoFile);
-//                    Intent intent = new Intent(Intent.ACTION_VIEW, photoURI);
-//                    intent.setDataAndType(photoURI, "image/*");
-//                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-//                    startActivity(intent);
-//
-//                });
-//                snackbar.show();
-//            } else {
-//                Toast toast = Toast.makeText(MainActivity.this,
-//                        "Failed to copyPixels: " + copyResult, Toast.LENGTH_LONG);
-//                toast.show();
-//            }
-//            handlerThread.quitSafely();
-//        }, new Handler(handlerThread.getLooper()));
-//    }
+    private String generateFilename() {
+        String date =
+                new SimpleDateFormat("yyyyMMddHHmmss", java.util.Locale.getDefault()).format(new Date());
+        return Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_PICTURES) + File.separator + "Sceneform/" + date + "_screenshot.jpg";
+    }
+
+    private void takePhoto() {
+        final String filename = generateFilename();
+        ArSceneView view = fragment.getArSceneView();
+
+        // Create a bitmap the size of the scene view.
+        final Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(),
+                Bitmap.Config.ARGB_8888);
+
+        // Create a handler thread to offload the processing of the image.
+        final HandlerThread handlerThread = new HandlerThread("PixelCopier");
+        handlerThread.start();
+        // Make the request to copy.
+        PixelCopy.request(view, bitmap, (copyResult) -> {
+            if (copyResult == PixelCopy.SUCCESS) {
+                try {
+                    saveBitmapToDisk(bitmap, filename);
+                } catch (IOException e) {
+                    Toast toast = Toast.makeText(MainActivity.this, e.toString(),
+                            Toast.LENGTH_LONG);
+                    toast.show();
+                    return;
+                }
+                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),
+                        "Photo saved", Snackbar.LENGTH_LONG);
+                snackbar.setAction("Open in Photos", v -> {
+                    File photoFile = new File(filename);
+
+                    Uri photoURI = FileProvider.getUriForFile(MainActivity.this,
+                            MainActivity.this.getPackageName() + ".ar.codelab.name.provider",
+                            photoFile);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, photoURI);
+                    intent.setDataAndType(photoURI, "image/*");
+                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    startActivity(intent);
+
+                });
+                snackbar.show();
+            } else {
+                Toast toast = Toast.makeText(MainActivity.this,
+                        "Failed to copyPixels: " + copyResult, Toast.LENGTH_LONG);
+                toast.show();
+            }
+            handlerThread.quitSafely();
+        }, new Handler(handlerThread.getLooper()));
+    }
+
+
+    private void saveBitmapToDisk(Bitmap bitmap, String filename) throws IOException {
+
+        File out = new File(filename);
+        if (!out.getParentFile().exists()) {
+            out.getParentFile().mkdirs();
+        }
+        try (FileOutputStream outputStream = new FileOutputStream(filename);
+             ByteArrayOutputStream outputData = new ByteArrayOutputStream()) {
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputData);
+            outputData.writeTo(outputStream);
+            outputStream.flush();
+            outputStream.close();
+        } catch (IOException ex) {
+            throw new IOException("Failed to save bitmap to disk", ex);
+        }
+    }
+
+
 
     private void onUpdate(){
         boolean trackingChanged = updateTracking();
@@ -295,44 +298,40 @@ public class MainActivity extends AppCompatActivity {
         gallery.addView(sticky);
     }
     private void addObject(Uri model) {
-//        Frame frame = fragment.getArSceneView().getArFrame();
-//        Point pt = getScreenCenter();
-//        List<HitResult> hits;
-//        if (frame != null) {
-//            hits = frame.hitTest(pt.x, pt.y);
-//            for (HitResult hit : hits) {
-//                Trackable trackable = hit.getTrackable();
-//                if ((trackable instanceof Plane &&
-//                        ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {
-//                    placeObject(fragment, hit.createAnchor(), model);
-//                    break;
-//
-//                }
-//            }
-//        }
-
         lat = 12;                                                                 //test
         lon = 12;
 
         Frame frame = fragment.getArSceneView().getArFrame();
         Point pt = getScreenCenter();
-        List<HitResult> hits;
-        if (frame != null) {
-            if (lat != 0 && lon != 0) {                                           // values passed for lat and lon, the HitResult list creates anchors and places the model at the loc
-                hits = frame.hitTest(lat, lon);
-            } else {
+
+        if (lat != 0.0f && lon != 0.0f) {       //this one brings up the stored lat and lon
+            List<HitResult> hits;
+            if (frame != null) {
                 hits = frame.hitTest(pt.x, pt.y);
-            }
-            for (HitResult hit : hits) {
-                Trackable trackable = hit.getTrackable();
-                if ((trackable instanceof Plane &&
-                        ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {
-                    placeObject(fragment, hit.createAnchor(), model);
-                    break;
+                for (HitResult hit : hits) {
+                    hits.set(0, frame.hitTest(lat,lon).createAnchor);
+                    Trackable trackable = hit.getTrackable();
+                    if ((trackable instanceof Plane &&
+                            ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {
+                        placeObject(fragment, hit.createAnchor(), model);
+                        break;
+                    }
                 }
             }
         }
-
+        else {                                 //this is the original click so the user can keep making notes
+            List<HitResult> hits;
+            if (frame != null) {
+                hits = frame.hitTest(pt.x, pt.y);
+                for (HitResult hit : hits) {
+                    Trackable trackable = hit.getTrackable();
+                    if ((trackable instanceof Plane && ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {
+                        placeObject(fragment, hit.createAnchor(), model);
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     private void placeObject(ArFragment fragment, Anchor anchor, Uri model) {
