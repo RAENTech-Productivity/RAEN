@@ -175,12 +175,15 @@ public class AddText extends AppCompatActivity {
 
     private boolean checkLocation(){
         if(!isLocationEnabled()){
+            Log.i("GOTHERE", "location is not enabled");
             showAlert();
         }
+        Log.i("GOTHERE", "return location permission status:" + isLocationEnabled());
         return isLocationEnabled();
     }
 
     private void showAlert() {
+        Log.i("GOTHERE", "Location Alert");
         final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle("Enable Location")
                 .setMessage("Your Locations Settings is set to 'Off'.\nPlease Enable Location to " +
@@ -230,7 +233,9 @@ public class AddText extends AppCompatActivity {
     }
 
     public Location toggleBestUpdates() {
+        Log.i("GOTHERE", "best updates");
         if(!checkLocation()){
+            Log.i("GOTHERE", "check if location is enabled");
             return null;
         }
         else {

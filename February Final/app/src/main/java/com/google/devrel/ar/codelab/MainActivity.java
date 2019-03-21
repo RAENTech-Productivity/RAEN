@@ -89,15 +89,11 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i("GOTHERE", "the AR 1");
         super.onCreate(savedInstanceState);
-        Log.i("GOTHERE", "the AR 2");
         setContentView(R.layout.activity_main);
-        Log.i("GOTHERE", "the AR 3");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        Log.i("GOTHERE", "the AR 4");
         setSupportActionBar(toolbar);
-        Log.i("GOTHERE", "the AR 5");
+
         GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
                 .setEventKey("LOAD_MESSAGE")
                 .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>()
@@ -121,11 +117,6 @@ public class MainActivity extends AppCompatActivity {
                                int second_colon = notes.indexOf(note_lon)+ note_lon.length();
                                int first_quote = second_colon + 1;
                                int second_quote = notes.indexOf("\"", first_quote+1);
-//                                Log.i("GOTHERE", "substring" + notes.substring(first_quote+1, second_quote));
-//
-//                               Log.i("GOTHERE", "2nd colon long" + second_colon );
-//                               Log.i("GOTHERE", "1st quote long" + first_quote );
-//                               Log.i("GOTHERE", "2nd quote long" + second_quote );
 
                             if (notes.substring(first_quote+1, second_quote) != null   && !notes.substring(first_quote+1, second_quote).equals("")) {
                                     longitude = Float.valueOf(notes.substring(first_quote+1, second_quote));
@@ -162,7 +153,6 @@ public class MainActivity extends AppCompatActivity {
 
                                 notes = notes.substring(second_colon);
                                 notes = notes.substring(notes.indexOf("messLon")-1);
-//                                Log.i("GOTHERE", "leftover" + notes );
                             }
 
 
