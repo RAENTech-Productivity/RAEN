@@ -67,6 +67,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.nio.ByteBuffer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -113,8 +114,58 @@ public class MainActivity extends AppCompatActivity {
                             String list_of_notes = data.toString();
                             Log.i("GOTHERE", "String list" + list_of_notes );
 
-//                            String closest_five_notes;
-//                            String mod_list_of_notes = data.toString();
+                            //getAttribute doesn't seem to be working
+//                            Object new_data = logEventResponse.getScriptData().getAttribute("all_messages");
+//                            Log.i("GOTHERE_OBJECT", "String ?" + new_data );
+
+                            // messLon is after the 2nd oolon
+                            // messLat is after the 5th colon
+
+                           float [] closest_five_notes = new float[5];
+                           String notes = data.toString();
+                            String note_lon = "\"messLon\"";
+                            String note_lat = "\"messLat\"";
+                            float latitude;
+                            float longitude;
+                           for (int i =0; i < 7; i++){
+                               int second_colon = notes.indexOf(note_lon)+ note_lon.length();
+                               int first_quote = second_colon + 1;
+                               int second_quote = notes.indexOf("\"", first_quote+1);
+                                Log.i("GOTHERE", "substring" + notes.substring(first_quote+1, second_quote));
+
+                               Log.i("GOTHERE", "2nd colon long" + second_colon );
+                               Log.i("GOTHERE", "1st quote long" + first_quote );
+                               Log.i("GOTHERE", "2nd quote long" + second_quote );
+
+                            if (notes.substring(first_quote+1, second_quote) != null   && !notes.substring(first_quote+1, second_quote).equals("")) {
+                                    longitude = Float.valueOf(notes.substring(first_quote+1, second_quote));
+                                }
+                                else{
+                                    longitude = 33333;
+                                }
+
+                               second_colon = notes.indexOf(note_lat)+note_lat.length();
+                               first_quote = second_colon + 1;
+                               second_quote = notes.indexOf("\"", first_quote+1);
+
+                               if (notes.substring(first_quote+1, second_quote) != null   && !notes.substring(first_quote+1, second_quote).equals("")) {
+                                   latitude = Float.valueOf(notes.substring(first_quote+1, second_quote));
+                               }
+                               else{
+                                   latitude = 33333;
+                               }
+
+
+                                Log.i("GOTHERE", "2nd colon lat" + second_colon );
+                                Log.i("GOTHERE", "1st quote lat" + first_quote );
+                                Log.i("GOTHERE", "2nd quote lat" + second_quote );
+                                Log.i("GOTHERE", "float long" + longitude);
+                               Log.i("GOTHERE", "float lat" + latitude);
+
+                                notes = notes.substring(second_colon);
+                                notes = notes.substring(notes.indexOf("messLon")-1);
+                                Log.i("GOTHERE", "leftover" + notes );
+                            }
 
 
                         Log.i("GOTHEREDATA", "AR completed event");
@@ -331,6 +382,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+
     }
 
     private void placeObject(ArFragment fragment, Anchor anchor, Uri model) {
