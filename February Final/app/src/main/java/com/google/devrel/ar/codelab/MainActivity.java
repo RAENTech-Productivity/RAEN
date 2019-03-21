@@ -66,6 +66,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.nio.ByteBuffer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -112,10 +113,60 @@ public class MainActivity extends AppCompatActivity {
                             String list_of_notes = data.toString();
                             Log.i("GOTHERE", "String list" + list_of_notes );
 
-//                            String closest_five_notes;
-//                            String mod_list_of_notes = data.toString();
+                            //getAttribute doesn't seem to be working
+//                            Object new_data = logEventResponse.getScriptData().getAttribute("all_messages");
+//                            Log.i("GOTHERE_OBJECT", "String ?" + new_data );
 
-/
+                            // messLon is after the 2nd oolon
+                            // messLat is after the 5th colon
+
+                           float [] closest_five_notes = new float[5];
+                           String notes = data.toString();
+                            String note_lon = "\"messLon\"";
+                            String note_lat = "\"messLat\"";
+                            float latitude;
+                            float longitude;
+                           for (int i =0; i < 7; i++){
+                               int second_colon = notes.indexOf(note_lon)+ note_lon.length();
+                               int first_quote = second_colon + 1;
+                               int second_quote = notes.indexOf("\"", first_quote+1);
+                                Log.i("GOTHERE", "substring" + notes.substring(first_quote+1, second_quote));
+
+                               Log.i("GOTHERE", "2nd colon long" + second_colon );
+                               Log.i("GOTHERE", "1st quote long" + first_quote );
+                               Log.i("GOTHERE", "2nd quote long" + second_quote );
+
+                            if (notes.substring(first_quote+1, second_quote) != null   && !notes.substring(first_quote+1, second_quote).equals("")) {
+                                    longitude = Float.valueOf(notes.substring(first_quote+1, second_quote));
+                                }
+                                else{
+                                    longitude = 33333;
+                                }
+
+                               second_colon = notes.indexOf(note_lat)+note_lat.length();
+                               first_quote = second_colon + 1;
+                               second_quote = notes.indexOf("\"", first_quote+1);
+
+                               if (notes.substring(first_quote+1, second_quote) != null   && !notes.substring(first_quote+1, second_quote).equals("")) {
+                                   latitude = Float.valueOf(notes.substring(first_quote+1, second_quote));
+                               }
+                               else{
+                                   latitude = 33333;
+                               }
+
+
+                                Log.i("GOTHERE", "2nd colon lat" + second_colon );
+                                Log.i("GOTHERE", "1st quote lat" + first_quote );
+                                Log.i("GOTHERE", "2nd quote lat" + second_quote );
+                                Log.i("GOTHERE", "float long" + longitude);
+                               Log.i("GOTHERE", "float lat" + latitude);
+
+                                notes = notes.substring(second_colon);
+                                notes = notes.substring(notes.indexOf("messLon")-1);
+                                Log.i("GOTHERE", "leftover" + notes );
+                            }
+
+
                         Log.i("GOTHEREDATA", "AR completed event");
                     }
 
@@ -137,75 +188,75 @@ public class MainActivity extends AppCompatActivity {
         Log.i("GOTHERE", "the AR 6");
     }
 
-//    private String generateFilename() {
-//        String date =
-//                new SimpleDateFormat("yyyyMMddHHmmss", java.util.Locale.getDefault()).format(new Date());
-//        return Environment.getExternalStoragePublicDirectory(
-//                Environment.DIRECTORY_PICTURES) + File.separator + "Sceneform/" + date + "_screenshot.jpg";
-//    }
-//
-//    private void saveBitmapToDisk(Bitmap bitmap, String filename) throws IOException {
-//
-//        File out = new File(filename);
-//        if (!out.getParentFile().exists()) {
-//            out.getParentFile().mkdirs();
-//        }
-//        try (FileOutputStream outputStream = new FileOutputStream(filename);
-//             ByteArrayOutputStream outputData = new ByteArrayOutputStream()) {
-//            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputData);
-//            outputData.writeTo(outputStream);
-//            outputStream.flush();
-//            outputStream.close();
-//        } catch (IOException ex) {
-//            throw new IOException("Failed to save bitmap to disk", ex);
-//        }
-//    }
-//
-//    private void takePhoto() {
-//        final String filename = generateFilename();
-//        ArSceneView view = fragment.getArSceneView();
-//
-//        // Create a bitmap the size of the scene view.
-//        final Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(),
-//                Bitmap.Config.ARGB_8888);
-//
-//        // Create a handler thread to offload the processing of the image.
-//        final HandlerThread handlerThread = new HandlerThread("PixelCopier");
-//        handlerThread.start();
-//        // Make the request to copy.
-//        PixelCopy.request(view, bitmap, (copyResult) -> {
-//            if (copyResult == PixelCopy.SUCCESS) {
-//                try {
-//                    saveBitmapToDisk(bitmap, filename);
-//                } catch (IOException e) {
-//                    Toast toast = Toast.makeText(MainActivity.this, e.toString(),
-//                            Toast.LENGTH_LONG);
-//                    toast.show();
-//                    return;
-//                }
-//                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),
-//                        "Photo saved", Snackbar.LENGTH_LONG);
-//                snackbar.setAction("Open in Photos", v -> {
-//                    File photoFile = new File(filename);
-//
-//                    Uri photoURI = FileProvider.getUriForFile(MainActivity.this,
-//                            MainActivity.this.getPackageName() + ".ar.codelab.name.provider",
-//                            photoFile);
-//                    Intent intent = new Intent(Intent.ACTION_VIEW, photoURI);
-//                    intent.setDataAndType(photoURI, "image/*");
-//                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-//                    startActivity(intent);
-//
-//                });
-//                snackbar.show();
-//            } else {
-//                Toast toast = Toast.makeText(MainActivity.this,
-//                        "Failed to copyPixels: " + copyResult, Toast.LENGTH_LONG);
-//                toast.show();
-//            }
-//            handlerThread.quitSafely();
-//        }, new Handler(handlerThread.getLooper()));
-//    }
+    private String generateFilename() {
+        String date =
+                new SimpleDateFormat("yyyyMMddHHmmss", java.util.Locale.getDefault()).format(new Date());
+        return Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_PICTURES) + File.separator + "Sceneform/" + date + "_screenshot.jpg";
+    }
+
+    private void saveBitmapToDisk(Bitmap bitmap, String filename) throws IOException {
+
+        File out = new File(filename);
+        if (!out.getParentFile().exists()) {
+            out.getParentFile().mkdirs();
+        }
+        try (FileOutputStream outputStream = new FileOutputStream(filename);
+             ByteArrayOutputStream outputData = new ByteArrayOutputStream()) {
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputData);
+            outputData.writeTo(outputStream);
+            outputStream.flush();
+            outputStream.close();
+        } catch (IOException ex) {
+            throw new IOException("Failed to save bitmap to disk", ex);
+        }
+    }
+
+    private void takePhoto() {
+        final String filename = generateFilename();
+        ArSceneView view = fragment.getArSceneView();
+
+        // Create a bitmap the size of the scene view.
+        final Bitmap bitmap = Bitmap.createBitmap(view.getWidth(), view.getHeight(),
+                Bitmap.Config.ARGB_8888);
+
+        // Create a handler thread to offload the processing of the image.
+        final HandlerThread handlerThread = new HandlerThread("PixelCopier");
+        handlerThread.start();
+        // Make the request to copy.
+        PixelCopy.request(view, bitmap, (copyResult) -> {
+            if (copyResult == PixelCopy.SUCCESS) {
+                try {
+                    saveBitmapToDisk(bitmap, filename);
+                } catch (IOException e) {
+                    Toast toast = Toast.makeText(MainActivity.this, e.toString(),
+                            Toast.LENGTH_LONG);
+                    toast.show();
+                    return;
+                }
+                Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),
+                        "Photo saved", Snackbar.LENGTH_LONG);
+                snackbar.setAction("Open in Photos", v -> {
+                    File photoFile = new File(filename);
+
+                    Uri photoURI = FileProvider.getUriForFile(MainActivity.this,
+                            MainActivity.this.getPackageName() + ".ar.codelab.name.provider",
+                            photoFile);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, photoURI);
+                    intent.setDataAndType(photoURI, "image/*");
+                    intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                    startActivity(intent);
+
+                });
+                snackbar.show();
+            } else {
+                Toast toast = Toast.makeText(MainActivity.this,
+                        "Failed to copyPixels: " + copyResult, Toast.LENGTH_LONG);
+                toast.show();
+            }
+            handlerThread.quitSafely();
+        }, new Handler(handlerThread.getLooper()));
+    }
 
     private void onUpdate(){
         boolean trackingChanged = updateTracking();
