@@ -298,7 +298,7 @@ public class MainActivity extends AppCompatActivity {
         gallery.addView(sticky);
     }
     private void addObject(Uri model) {
-        lat = 12;                                                                 //test
+        lat = 12;                      //test
         lon = 12;
 
         Frame frame = fragment.getArSceneView().getArFrame();
@@ -307,12 +307,10 @@ public class MainActivity extends AppCompatActivity {
         if (lat != 0.0f && lon != 0.0f) {       //this one brings up the stored lat and lon
             List<HitResult> hits;
             if (frame != null) {
-                hits = frame.hitTest(pt.x, pt.y);
+                hits = frame.hitTest(lat, lon);
                 for (HitResult hit : hits) {
-                    hits.set(0, frame.hitTest(lat,lon).createAnchor);
                     Trackable trackable = hit.getTrackable();
-                    if ((trackable instanceof Plane &&
-                            ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {
+                    if ((trackable instanceof Plane && ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {
                         placeObject(fragment, hit.createAnchor(), model);
                         break;
                     }
