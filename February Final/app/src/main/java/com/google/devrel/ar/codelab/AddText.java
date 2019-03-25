@@ -83,7 +83,7 @@ public class AddText extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 //        locationManager =  (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
 
         GSAndroidPlatform.initialise(this, "u374201md1E4", "ktbBEnAi7UjgzEFdlY8s9E892AqZoVnR", "device", false, true);
         Log.i("GOTHEREGS", "initial GS");
@@ -123,6 +123,7 @@ public class AddText extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.i("GOTHERECLICK", "button");
+                locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 Location location = toggleBestUpdates();
                 Log.i("GOTHERECLICK", ""+location);
 
@@ -243,6 +244,7 @@ public class AddText extends AppCompatActivity {
             return null;
         }
         else {
+            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             Criteria criteria = new Criteria();
             criteria.setAccuracy(Criteria.ACCURACY_FINE);
             criteria.setAltitudeRequired(false);

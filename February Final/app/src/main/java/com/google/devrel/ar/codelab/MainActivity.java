@@ -82,8 +82,8 @@ public class MainActivity extends AppCompatActivity {
     private boolean isTracking;
     private boolean isHitting;
 
-    private float lat;
-    private float lon; //maybe need to be global... we'll see
+    //private float lat;
+    //private float lon; //maybe need to be global... we'll see
     float [] closestNotes = new float[10];
 
 
@@ -339,39 +339,36 @@ public class MainActivity extends AppCompatActivity {
         gallery.addView(sticky);
     }
     private void addObject(Uri model) {
-        lat = 12;                      //test
-        lon = 12;
-
         Frame frame = fragment.getArSceneView().getArFrame();
         Point pt = getScreenCenter();
 
-        if (lat != 0.0f && lon != 0.0f) {       //this one brings up the stored lat and lon
+        if (closestNotes != null) {       //this one brings up the stored lat and lon
             List<HitResult> hits;
             if (frame != null) {
-                hits = frame.hitTest(lat, lon);
-                for (HitResult hit : hits) {
-                    Trackable trackable = hit.getTrackable();
-                    if ((trackable instanceof Plane && ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {
-                        placeObject(fragment, hit.createAnchor(), model);
-                        break;
+                for(int i = 0; i >= 10; i = i + 2){
+                    hits = frame.hitTest(closestNotes[i], closestNotes[i+1]);
+                    for (HitResult hit : hits) {
+                        Trackable trackable = hit.getTrackable();
+                        if ((trackable instanceof Plane && ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {
+                            placeObject(fragment, hit.createAnchor(), model);
+                            break;
+                        }
                     }
                 }
             }
         }
-        else {                                 //this is the original click so the user can keep making notes
-            List<HitResult> hits;
-            if (frame != null) {
-                hits = frame.hitTest(pt.x, pt.y);
-                for (HitResult hit : hits) {
-                    Trackable trackable = hit.getTrackable();
-                    if ((trackable instanceof Plane && ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {
-                        placeObject(fragment, hit.createAnchor(), model);
-                        break;
-                    }
+                                    //this is the original click so the user can keep making notes
+        List<HitResult> hits;
+        if (frame != null) {
+            hits = frame.hitTest(pt.x, pt.y);
+            for (HitResult hit : hits) {
+                Trackable trackable = hit.getTrackable();
+                if ((trackable instanceof Plane && ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {
+                    placeObject(fragment, hit.createAnchor(), model);
+                    break;
                 }
             }
         }
-
     }
 
     private void placeObject(ArFragment fragment, Anchor anchor, Uri model) {
