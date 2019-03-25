@@ -83,7 +83,7 @@ public class AddText extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 //        locationManager =  (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         GSAndroidPlatform.initialise(this, "u374201md1E4", "ktbBEnAi7UjgzEFdlY8s9E892AqZoVnR", "device", false, true);
         Log.i("GOTHEREGS", "initial GS");
@@ -173,6 +173,7 @@ public class AddText extends AppCompatActivity {
         });
     }
 
+
     private boolean checkLocation(){
         if(!isLocationEnabled()){
             Log.i("GOTHERE", "location is not enabled");
@@ -204,6 +205,9 @@ public class AddText extends AppCompatActivity {
     }
 
     private boolean isLocationEnabled() {
+        Log.i("GOTHERE", "location Manager: " + locationManager);
+        Log.i("GOTHERE", "location Manager GPS: " + LocationManager.GPS_PROVIDER);
+        Log.i("GOTHERE", "location Manager GPS: " + LocationManager.NETWORK_PROVIDER);
         if (LocationManager.GPS_PROVIDER!=null && LocationManager.NETWORK_PROVIDER!=null  && locationManager!=null) {
             return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
                     locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
