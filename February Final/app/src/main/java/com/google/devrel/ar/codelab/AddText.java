@@ -143,27 +143,27 @@ public class AddText extends AppCompatActivity {
                 }
 
 
-//                GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
-//                        .setEventKey("SAVE_GEO_MESSAGE")
-//                        .setEventAttribute("LAT", ""+ lat )
-//                        .setEventAttribute("LON", "" + lon)
-//                        .setEventAttribute("TEXT", "gs connection")
-//                        .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>()
-//                        {
-//                            @Override
-//                            public void onEvent(GSResponseBuilder.LogEventResponse logEventResponse)
-//                            {
-//                                if (!logEventResponse.hasErrors()) {
-//                                    //DO something
-//                                    Log.i("GOTHERE", "the connection worked");
-//                                } else {
-//                                    Log.i("GOTHERE", "connection failed");
-//                                    Log.i("GOTHEREDATA", logEventResponse.toString());
-//                                }
-//                                Log.i("GOTHEREDATA", "completed event");
-//                            }
-//
-//                        });
+                GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
+                        .setEventKey("SAVE_GEO_MESSAGE")
+                        .setEventAttribute("LAT", ""+ lat )
+                        .setEventAttribute("LON", "" + lon)
+                        .setEventAttribute("TEXT", "gs connection")
+                        .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>()
+                        {
+                            @Override
+                            public void onEvent(GSResponseBuilder.LogEventResponse logEventResponse)
+                            {
+                                if (!logEventResponse.hasErrors()) {
+                                    //DO something
+                                    Log.i("GOTHERE", "the connection worked");
+                                } else {
+                                    Log.i("GOTHERE", "connection failed");
+                                    Log.i("GOTHEREDATA", logEventResponse.toString());
+                                }
+                                Log.i("GOTHEREDATA", "completed event");
+                            }
+
+                        });
 
                 Log.i("GOTHERE", "about to start");
                 startActivity(new Intent(AddText.this, MainActivity.class));
@@ -175,12 +175,15 @@ public class AddText extends AppCompatActivity {
 
     private boolean checkLocation(){
         if(!isLocationEnabled()){
+            Log.i("GOTHERE", "location is not enabled");
             showAlert();
         }
+        Log.i("GOTHERE", "return location permission status:" + isLocationEnabled());
         return isLocationEnabled();
     }
 
     private void showAlert() {
+        Log.i("GOTHERE", "Location Alert");
         final AlertDialog.Builder dialog = new AlertDialog.Builder(this);
         dialog.setTitle("Enable Location")
                 .setMessage("Your Locations Settings is set to 'Off'.\nPlease Enable Location to " +
@@ -230,7 +233,9 @@ public class AddText extends AppCompatActivity {
     }
 
     public Location toggleBestUpdates() {
+        Log.i("GOTHERE", "best updates");
         if(!checkLocation()){
+            Log.i("GOTHERE", "check if location is enabled");
             return null;
         }
         else {

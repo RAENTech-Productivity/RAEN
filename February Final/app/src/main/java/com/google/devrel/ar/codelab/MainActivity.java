@@ -84,19 +84,17 @@ public class MainActivity extends AppCompatActivity {
 
     private float lat;
     private float lon; //maybe need to be global... we'll see
+    float [] closestNotes = new float[10];
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.i("GOTHERE", "the AR 1");
         super.onCreate(savedInstanceState);
-        Log.i("GOTHERE", "the AR 2");
         setContentView(R.layout.activity_main);
-        Log.i("GOTHERE", "the AR 3");
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        Log.i("GOTHERE", "the AR 4");
         setSupportActionBar(toolbar);
-        Log.i("GOTHERE", "the AR 5");
+
         GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
                 .setEventKey("LOAD_MESSAGE")
                 .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>()
@@ -108,34 +106,18 @@ public class MainActivity extends AppCompatActivity {
                             //DO something
                             Log.i("GOTHERE", "the AR connection worked");
                             GSData scriptData = logEventResponse.getScriptData();
-                            Log.i("GOTHERE", "Data" + scriptData);
                             Map data = scriptData.getBaseData();
                             Log.i("GOTHERE", "Map" + data);
-                            String list_of_notes = data.toString();
-                            Log.i("GOTHERE", "String list" + list_of_notes );
 
-                            //getAttribute doesn't seem to be working
-//                            Object new_data = logEventResponse.getScriptData().getAttribute("all_messages");
-//                            Log.i("GOTHERE_OBJECT", "String ?" + new_data );
-
-                            // messLon is after the 2nd oolon
-                            // messLat is after the 5th colon
-
-                           float [] closest_five_notes = new float[5];
                            String notes = data.toString();
                             String note_lon = "\"messLon\"";
                             String note_lat = "\"messLat\"";
                             float latitude;
                             float longitude;
-                           for (int i =0; i < 7; i++){
+                           for (int i =0; i < 6; i++){
                                int second_colon = notes.indexOf(note_lon)+ note_lon.length();
                                int first_quote = second_colon + 1;
                                int second_quote = notes.indexOf("\"", first_quote+1);
-                                Log.i("GOTHERE", "substring" + notes.substring(first_quote+1, second_quote));
-
-                               Log.i("GOTHERE", "2nd colon long" + second_colon );
-                               Log.i("GOTHERE", "1st quote long" + first_quote );
-                               Log.i("GOTHERE", "2nd quote long" + second_quote );
 
                             if (notes.substring(first_quote+1, second_quote) != null   && !notes.substring(first_quote+1, second_quote).equals("")) {
                                     longitude = Float.valueOf(notes.substring(first_quote+1, second_quote));
@@ -143,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
                                 else{
                                     longitude = 33333;
                                 }
+
 
                                second_colon = notes.indexOf(note_lat)+note_lat.length();
                                first_quote = second_colon + 1;
@@ -155,16 +138,22 @@ public class MainActivity extends AppCompatActivity {
                                    latitude = 33333;
                                }
 
+                               if (latitude != 3333 && longitude != 3333) {
+                                   closestNotes[i] = latitude;
+                                   closestNotes[i + 1] = longitude;
+                               }
 
-                                Log.i("GOTHERE", "2nd colon lat" + second_colon );
-                                Log.i("GOTHERE", "1st quote lat" + first_quote );
-                                Log.i("GOTHERE", "2nd quote lat" + second_quote );
-                                Log.i("GOTHERE", "float long" + longitude);
-                               Log.i("GOTHERE", "float lat" + latitude);
+//                               PLEASE KEEP THESE PRINT STATEMENTS FOR FUTURE TESTING!!!
+
+//                               Log.i("GOTHERE", "ARRAY" + closestNotes[0]);
+//                                Log.i("GOTHERE", "2nd colon lat" + second_colon );
+//                                Log.i("GOTHERE", "1st quote lat" + first_quote );
+//                                Log.i("GOTHERE", "2nd quote lat" + second_quote );
+//                                Log.i("GOTHERE", "float long" + longitude);
+//                               Log.i("GOTHERE", "float lat" + latitude);
 
                                 notes = notes.substring(second_colon);
                                 notes = notes.substring(notes.indexOf("messLon")-1);
-                                Log.i("GOTHERE", "leftover" + notes );
                             }
 
 
