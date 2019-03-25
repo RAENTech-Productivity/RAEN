@@ -83,7 +83,7 @@ public class AddText extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 //        locationManager =  (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         GSAndroidPlatform.initialise(this, "u374201md1E4", "ktbBEnAi7UjgzEFdlY8s9E892AqZoVnR", "device", false, true);
         Log.i("GOTHEREGS", "initial GS");
@@ -135,6 +135,9 @@ public class AddText extends AppCompatActivity {
 
                     lon = location.getLongitude();
                     bearing = location.getBearing();
+
+//                    Log.i("GOTHERECLICK", "LAT: "+ lat);
+//                    Log.i("GOTHERECLICK", "LAT: "+ lat);
                 }
                 else{
                     lat = 0;
@@ -147,7 +150,7 @@ public class AddText extends AppCompatActivity {
                         .setEventKey("SAVE_GEO_MESSAGE")
                         .setEventAttribute("LAT", ""+ lat )
                         .setEventAttribute("LON", "" + lon)
-                        .setEventAttribute("TEXT", "gs connection")
+                        .setEventAttribute("TEXT", "actually worksssssss")
                         .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>()
                         {
                             @Override
@@ -205,9 +208,10 @@ public class AddText extends AppCompatActivity {
     }
 
     private boolean isLocationEnabled() {
-        Log.i("GOTHERE", "location Manager: " + locationManager);
-        Log.i("GOTHERE", "location Manager GPS: " + LocationManager.GPS_PROVIDER);
-        Log.i("GOTHERE", "location Manager GPS: " + LocationManager.NETWORK_PROVIDER);
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//        Log.i("GOTHERE", "location Manager: " + locationManager);
+//        Log.i("GOTHERE", "location Manager GPS: " + LocationManager.GPS_PROVIDER);
+//        Log.i("GOTHERE", "location Manager GPS: " + LocationManager.NETWORK_PROVIDER);
         if (LocationManager.GPS_PROVIDER!=null && LocationManager.NETWORK_PROVIDER!=null  && locationManager!=null) {
             return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
                     locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);
@@ -243,6 +247,7 @@ public class AddText extends AppCompatActivity {
             return null;
         }
         else {
+            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             Criteria criteria = new Criteria();
             criteria.setAccuracy(Criteria.ACCURACY_FINE);
             criteria.setAltitudeRequired(false);
