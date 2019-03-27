@@ -20,6 +20,7 @@ import android.support.v7.widget.Toolbar;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 
 import com.gamesparks.sdk.GSEventConsumer;
@@ -85,6 +86,11 @@ public class AddText extends AppCompatActivity {
 //        locationManager =  (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 //        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
+         View view = this.getCurrentFocus();
+         if (view !=null) {
+             showSoftKeyboard(view);
+         }
+
         GSAndroidPlatform.initialise(this, "u374201md1E4", "ktbBEnAi7UjgzEFdlY8s9E892AqZoVnR", "device", false, true);
         Log.i("GOTHEREGS", "initial GS");
         GSAndroidPlatform.gs().setOnAvailable(new GSEventConsumer<Boolean>() {
@@ -114,8 +120,6 @@ public class AddText extends AppCompatActivity {
                 }
             }
         });
-
-
 
         Button btn = (Button)findViewById(R.id.add_text_button);
 
@@ -176,7 +180,12 @@ public class AddText extends AppCompatActivity {
         });
     }
 
-
+    public void showSoftKeyboard(View view){
+        if(view.requestFocus()){
+            InputMethodManager imm =(InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.showSoftInput(view,InputMethodManager.SHOW_IMPLICIT);
+        }
+    }
     private boolean checkLocation(){
         if(!isLocationEnabled()){
             Log.i("GOTHERE", "location is not enabled");
