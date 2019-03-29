@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        try {
             GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
                     .setEventKey("LOAD_MESSAGE")
                     .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>() {
@@ -163,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
 
                                     closestNotesMessages[i] = renderable_message;
+                                    Log.i("GOTHERE MESSAGES", "" + closestNotesMessages[i]);
 
 //                               PLEASE KEEP THESE PRINT STATEMENTS FOR FUTURE TESTING!!!
 
@@ -186,10 +186,9 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                     });
-        }
-        finally {
-            initializeGallery();
-        }
+
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -203,7 +202,10 @@ public class MainActivity extends AppCompatActivity {
             onUpdate();
         });
 
+//        closestNotesMessages[0] = "hello";
    //where initializeGallery was
+        Log.i("GOTHERE MESSAGE", "" + closestNotesMessages[0]);
+        initializeGallery();
         Log.i("GOTHERE", "the AR 6");
     }
 
@@ -417,7 +419,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void createPNG(String text) {
 //        String text = "This \nis \nmultiline";
-        Log.i("GOTHERE MESSAGE", text);
+//        Log.i("GOTHERE MESSAGE", text);
 
         final Rect bounds = new Rect();
         TextPaint textPaint = new TextPaint() {
