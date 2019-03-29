@@ -84,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
     private float lat;
     private float lon; //maybe need to be global... we'll see
     float [] closestNotes = new float[10];
+    String [] closestNotesMessages = new String[5];
 
 
 
@@ -111,9 +112,12 @@ public class MainActivity extends AppCompatActivity {
                            String notes = data.toString();
                             String note_lon = "\"messLon\"";
                             String note_lat = "\"messLat\"";
+                            String note_mess = "\"messText\"";
                             float latitude;
                             float longitude;
-                           for (int i =0; i < 6; i++){
+                            String renderable_message;
+//
+                           for (int i =0; i < 5; i++){
                                int second_colon = notes.indexOf(note_lon)+ note_lon.length();
                                int first_quote = second_colon + 1;
                                int second_quote = notes.indexOf("\"", first_quote+1);
@@ -142,6 +146,20 @@ public class MainActivity extends AppCompatActivity {
                                    closestNotes[i + 1] = longitude;
                                }
 
+
+                               second_colon = notes.indexOf(note_mess)+note_mess.length();
+                               first_quote = second_colon + 1;
+                               second_quote = notes.indexOf("\"", first_quote+1);
+
+                               if (notes.substring(first_quote+1, second_quote) != null   && !notes.substring(first_quote+1, second_quote).equals("")) {
+                                   renderable_message = notes.substring(first_quote+1, second_quote);
+                               }
+                               else{
+                                   renderable_message = "RAENTECH DEFAULT MESSAGE";
+                               }
+
+                               closestNotesMessages[i] = renderable_message;
+
 //                               PLEASE KEEP THESE PRINT STATEMENTS FOR FUTURE TESTING!!!
 
 //                               Log.i("GOTHERE", "ARRAY" + closestNotes[0]);
@@ -150,6 +168,7 @@ public class MainActivity extends AppCompatActivity {
 //                                Log.i("GOTHERE", "2nd quote lat" + second_quote );
 //                                Log.i("GOTHERE", "float long" + longitude);
 //                               Log.i("GOTHERE", "float lat" + latitude);
+//                               Log.i("GOTHERE", "ar message" + renderable_message);
 
                                 notes = notes.substring(second_colon);
                                 notes = notes.substring(notes.indexOf("messLon")-1);
