@@ -17,20 +17,26 @@ package com.google.devrel.ar.codelab;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Point;
+import android.graphics.Rect;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.os.Looper;
-import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.util.Log;
 import android.view.PixelCopy;
 import android.view.SurfaceHolder;
@@ -65,6 +71,7 @@ import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -82,9 +89,10 @@ public class MainActivity extends AppCompatActivity {
     private boolean isTracking;
     private boolean isHitting;
 
-    //private float lat;
-    //private float lon; //maybe need to be global... we'll see
+    private float lat;
+    private float lon; //maybe need to be global... we'll see
     float [] closestNotes = new float[10];
+    String [] closestNotesMessages = new String[5];
 
 
 
@@ -95,53 +103,66 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
-                .setEventKey("LOAD_MESSAGE")
-                .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>()
-                {
-                    @Override
-                    public void onEvent(GSResponseBuilder.LogEventResponse logEventResponse)
-                    {
-                        if (!logEventResponse.hasErrors()) {
-                            //DO something
-                            Log.i("GOTHERE", "the AR connection worked");
-                            GSData scriptData = logEventResponse.getScriptData();
-                            Map data = scriptData.getBaseData();
-                            Log.i("GOTHERE", "Map" + data);
+        try {
+            GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
+                    .setEventKey("LOAD_MESSAGE")
+                    .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>() {
+                        @Override
+                        public void onEvent(GSResponseBuilder.LogEventResponse logEventResponse) {
+                            if (!logEventResponse.hasErrors()) {
+                                //DO something
+                                Log.i("GOTHERE", "the AR connection worked");
+                                GSData scriptData = logEventResponse.getScriptData();
+                                Map data = scriptData.getBaseData();
+                                Log.i("GOTHERE", "Map" + data);
 
-                           String notes = data.toString();
-                            String note_lon = "\"messLon\"";
-                            String note_lat = "\"messLat\"";
-                            float latitude;
-                            float longitude;
-                           for (int i =0; i < 6; i++){
-                               int second_colon = notes.indexOf(note_lon)+ note_lon.length();
-                               int first_quote = second_colon + 1;
-                               int second_quote = notes.indexOf("\"", first_quote+1);
+                                String notes = data.toString();
+                                String note_lon = "\"messLon\"";
+                                String note_lat = "\"messLat\"";
+                                String note_mess = "\"messText\"";
+                                float latitude;
+                                float longitude;
+                                String renderable_message;
+//
+                                for (int i = 0; i < 5; i++) {
+                                    int second_colon = notes.indexOf(note_lon) + note_lon.length();
+                                    int first_quote = second_colon + 1;
+                                    int second_quote = notes.indexOf("\"", first_quote + 1);
 
-                            if (notes.substring(first_quote+1, second_quote) != null   && !notes.substring(first_quote+1, second_quote).equals("")) {
-                                    longitude = Float.valueOf(notes.substring(first_quote+1, second_quote));
-                                }
-                                else{
-                                    longitude = 33333;
-                                }
+                                    if (notes.substring(first_quote + 1, second_quote) != null && !notes.substring(first_quote + 1, second_quote).equals("")) {
+                                        longitude = Float.valueOf(notes.substring(first_quote + 1, second_quote));
+                                    } else {
+                                        longitude = 33333;
+                                    }
 
 
-                               second_colon = notes.indexOf(note_lat)+note_lat.length();
-                               first_quote = second_colon + 1;
-                               second_quote = notes.indexOf("\"", first_quote+1);
+                                    second_colon = notes.indexOf(note_lat) + note_lat.length();
+                                    first_quote = second_colon + 1;
+                                    second_quote = notes.indexOf("\"", first_quote + 1);
 
-                               if (notes.substring(first_quote+1, second_quote) != null   && !notes.substring(first_quote+1, second_quote).equals("")) {
-                                   latitude = Float.valueOf(notes.substring(first_quote+1, second_quote));
-                               }
-                               else{
-                                   latitude = 33333;
-                               }
+                                    if (notes.substring(first_quote + 1, second_quote) != null && !notes.substring(first_quote + 1, second_quote).equals("")) {
+                                        latitude = Float.valueOf(notes.substring(first_quote + 1, second_quote));
+                                    } else {
+                                        latitude = 33333;
+                                    }
 
-                               if (latitude != 3333 && longitude != 3333) {
-                                   closestNotes[i] = latitude;
-                                   closestNotes[i + 1] = longitude;
-                               }
+                                    if (latitude != 3333 && longitude != 3333) {
+                                        closestNotes[i] = latitude;
+                                        closestNotes[i + 1] = longitude;
+                                    }
+
+
+                                    second_colon = notes.indexOf(note_mess) + note_mess.length();
+                                    first_quote = second_colon + 1;
+                                    second_quote = notes.indexOf("\"", first_quote + 1);
+
+                                    if (notes.substring(first_quote + 1, second_quote) != null && !notes.substring(first_quote + 1, second_quote).equals("")) {
+                                        renderable_message = notes.substring(first_quote + 1, second_quote);
+                                    } else {
+                                        renderable_message = "RAENTECH DEFAULT MESSAGE";
+                                    }
+
+                                    closestNotesMessages[i] = renderable_message;
 
 //                               PLEASE KEEP THESE PRINT STATEMENTS FOR FUTURE TESTING!!!
 
@@ -151,16 +172,24 @@ public class MainActivity extends AppCompatActivity {
 //                                Log.i("GOTHERE", "2nd quote lat" + second_quote );
 //                                Log.i("GOTHERE", "float long" + longitude);
 //                               Log.i("GOTHERE", "float lat" + latitude);
+//                               Log.i("GOTHERE", "ar message" + renderable_message);
 
-                                notes = notes.substring(second_colon);
-                                notes = notes.substring(notes.indexOf("messLon")-1);
+                                    Log.i("GOTHERE", "ar message" + renderable_message);
+
+                                    notes = notes.substring(second_colon);
+                                    notes = notes.substring(notes.indexOf("messLon") - 1);
+                                }
+
+
+                                Log.i("GOTHEREDATA", "AR completed event");
                             }
 
-
-                        Log.i("GOTHEREDATA", "AR completed event");
-                    }
-
-                }});
+                        }
+                    });
+        }
+        finally {
+            initializeGallery();
+        }
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -174,7 +203,7 @@ public class MainActivity extends AppCompatActivity {
             onUpdate();
         });
 
-        initializeGallery();
+   //where initializeGallery was
         Log.i("GOTHERE", "the AR 6");
     }
 
@@ -183,6 +212,23 @@ public class MainActivity extends AppCompatActivity {
                 new SimpleDateFormat("yyyyMMddHHmmss", java.util.Locale.getDefault()).format(new Date());
         return Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_PICTURES) + File.separator + "Sceneform/" + date + "_screenshot.jpg";
+    }
+
+    private void saveBitmapToDisk(Bitmap bitmap, String filename) throws IOException {
+
+        File out = new File(filename);
+        if (!out.getParentFile().exists()) {
+            out.getParentFile().mkdirs();
+        }
+        try (FileOutputStream outputStream = new FileOutputStream(filename);
+             ByteArrayOutputStream outputData = new ByteArrayOutputStream()) {
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputData);
+            outputData.writeTo(outputStream);
+            outputStream.flush();
+            outputStream.close();
+        } catch (IOException ex) {
+            throw new IOException("Failed to save bitmap to disk", ex);
+        }
     }
 
     private void takePhoto() {
@@ -230,26 +276,6 @@ public class MainActivity extends AppCompatActivity {
             handlerThread.quitSafely();
         }, new Handler(handlerThread.getLooper()));
     }
-
-
-    private void saveBitmapToDisk(Bitmap bitmap, String filename) throws IOException {
-
-        File out = new File(filename);
-        if (!out.getParentFile().exists()) {
-            out.getParentFile().mkdirs();
-        }
-        try (FileOutputStream outputStream = new FileOutputStream(filename);
-             ByteArrayOutputStream outputData = new ByteArrayOutputStream()) {
-            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputData);
-            outputData.writeTo(outputStream);
-            outputStream.flush();
-            outputStream.close();
-        } catch (IOException ex) {
-            throw new IOException("Failed to save bitmap to disk", ex);
-        }
-    }
-
-
 
     private void onUpdate(){
         boolean trackingChanged = updateTracking();
@@ -325,6 +351,9 @@ public class MainActivity extends AppCompatActivity {
     }
     private void initializeGallery() {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
+        createPNG(closestNotesMessages[0]);
+
+        int noteMessage = R.drawable.message_thumb; //need message to be placed in drawable with name "message_thumb.png"
 
         ImageView andy = new ImageView(this);
         andy.setImageResource(R.drawable.droid_thumb);
@@ -333,7 +362,8 @@ public class MainActivity extends AppCompatActivity {
         gallery.addView(andy);
 
         ImageView sticky = new ImageView(this);
-        sticky.setImageResource(R.drawable.sticky_thumb);
+        //sticky.setImageResource(R.drawable.sticky_thumb);
+        sticky.setImageResource(noteMessage);
         sticky.setContentDescription("sticky note");
         sticky.setOnClickListener(view ->{addObject(Uri.parse("model.sfb"));});
         gallery.addView(sticky);
@@ -345,8 +375,8 @@ public class MainActivity extends AppCompatActivity {
         if (closestNotes != null) {       //this one brings up the stored lat and lon
             List<HitResult> hits;
             if (frame != null) {
-                for(int i = 0; i >= 10; i = i + 2){
-                    hits = frame.hitTest(closestNotes[i], closestNotes[i+1]);
+                for (int i = 0; i >= 10; i = i + 2) {
+                    hits = frame.hitTest(closestNotes[i], closestNotes[i + 1]);
                     for (HitResult hit : hits) {
                         Trackable trackable = hit.getTrackable();
                         if ((trackable instanceof Plane && ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {
@@ -354,18 +384,6 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         }
                     }
-                }
-            }
-        }
-                                    //this is the original click so the user can keep making notes
-        List<HitResult> hits;
-        if (frame != null) {
-            hits = frame.hitTest(pt.x, pt.y);
-            for (HitResult hit : hits) {
-                Trackable trackable = hit.getTrackable();
-                if ((trackable instanceof Plane && ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {
-                    placeObject(fragment, hit.createAnchor(), model);
-                    break;
                 }
             }
         }
@@ -396,4 +414,67 @@ public class MainActivity extends AppCompatActivity {
         node.select();
     }
 
+
+    private void createPNG(String text) {
+//        String text = "This \nis \nmultiline";
+        Log.i("GOTHERE MESSAGE", text);
+
+        final Rect bounds = new Rect();
+        TextPaint textPaint = new TextPaint() {
+            {
+                setColor(Color.WHITE);
+                setTextAlign(Paint.Align.LEFT);
+                setTextSize(20f);
+                setAntiAlias(true);
+            }
+        };
+        textPaint.getTextBounds(text, 0, text.length(), bounds);
+        StaticLayout mTextLayout = new StaticLayout(text, textPaint,
+                bounds.width(), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+        int maxWidth = -1;
+        for (int i = 0; i < mTextLayout.getLineCount(); i++) {
+            if (maxWidth < mTextLayout.getLineWidth(i)) {
+                maxWidth = (int) mTextLayout.getLineWidth(i);
+            }
+        }
+        final Bitmap bmp = Bitmap.createBitmap(maxWidth, mTextLayout.getHeight(),
+                Bitmap.Config.ARGB_8888);
+        bmp.eraseColor(Color.BLACK); //just adding black background
+        final Canvas canvas = new Canvas(bmp);
+        mTextLayout.draw(canvas);
+
+        File file = new File(Environment.getExternalStorageDirectory() + File.separator + "message_thumb.png");
+
+
+        try {
+            if( !file.exists() ){
+                file.createNewFile();
+            }
+
+        } catch (IOException e) {
+
+        } finally {
+
+           try {
+               FileOutputStream stream = new FileOutputStream(file); //create your FileOutputStream here
+               bmp.compress(Bitmap.CompressFormat.PNG, 85, stream);
+               bmp.recycle();
+               try {
+                   stream.close();
+               } catch (IOException e) {
+                   //
+               }
+           }
+           catch (FileNotFoundException e1) {
+               // put print statement
+           }
+
+        }
+
+
+    }
+
+
 }
+
+
