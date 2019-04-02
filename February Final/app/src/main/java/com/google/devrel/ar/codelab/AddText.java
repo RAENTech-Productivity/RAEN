@@ -19,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -35,6 +36,8 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.v7.app.AlertDialog;
+import android.widget.MultiAutoCompleteTextView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -82,16 +85,21 @@ public class AddText extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_text);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        MultiAutoCompleteTextView txtView = (MultiAutoCompleteTextView) findViewById(R.id.add_message);
+        txtView.setGravity(Gravity.CENTER_HORIZONTAL);
         setSupportActionBar(toolbar);
 //        locationManager =  (LocationManager)getSystemService(Context.LOCATION_SERVICE);
 //        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+//        GameSparksAndroidApi.initialise(GS_SERVICE_API, GS_API_SECRET, this.getApplication());
 
          View view = this.getCurrentFocus();
          if (view !=null) {
              showSoftKeyboard(view);
          }
+//        GSAndroidPlatform.initialise(this, "u374201md1E4", "ktbBEnAi7UjgzEFdlY8s9E892AqZoVnR", "device", false, false);
 
-        GSAndroidPlatform.initialise(this, "u374201md1E4", "ktbBEnAi7UjgzEFdlY8s9E892AqZoVnR", "device", false, true);
+        GSAndroidPlatform.initialise(this, "u374201md1E4", "ktbBEnAi7UjgzEFdlY8s9E892AqZoVnR", "device", true, true);
+
         Log.i("GOTHEREGS", "initial GS");
         GSAndroidPlatform.gs().setOnAvailable(new GSEventConsumer<Boolean>() {
             @Override
@@ -133,6 +141,7 @@ public class AddText extends AppCompatActivity {
                 double lat;
                 double lon;
                 double bearing;
+                String messageText;
 
                 if (location != null) {
                     lat = location.getLatitude();
@@ -148,8 +157,8 @@ public class AddText extends AppCompatActivity {
                     lon = 0;
                     bearing = 0;
                 }
-
-
+                MultiAutoCompleteTextView textView =(MultiAutoCompleteTextView)findViewById(R.id.add_message);
+                messageText = textView.getText().toString();
                 GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
                         .setEventKey("SAVE_GEO_MESSAGE")
                         .setEventAttribute("LAT", ""+ lat )
@@ -218,9 +227,9 @@ public class AddText extends AppCompatActivity {
 
     private boolean isLocationEnabled() {
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-//        Log.i("GOTHERE", "location Manager: " + locationManager);
-//        Log.i("GOTHERE", "location Manager GPS: " + LocationManager.GPS_PROVIDER);
-//        Log.i("GOTHERE", "location Manager GPS: " + LocationManager.NETWORK_PROVIDER);
+        Log.i("GOTHERE", "location Manager: " + locationManager);
+        Log.i("GOTHERE", "location Manager GPS: " + LocationManager.GPS_PROVIDER);
+        Log.i("GOTHERE", "location Manager GPS: " + LocationManager.NETWORK_PROVIDER);
         if (LocationManager.GPS_PROVIDER!=null && LocationManager.NETWORK_PROVIDER!=null  && locationManager!=null) {
             return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) ||
                     locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER);

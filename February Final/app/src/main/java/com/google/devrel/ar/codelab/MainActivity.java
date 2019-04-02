@@ -204,9 +204,9 @@ public class MainActivity extends AppCompatActivity {
 
 //        closestNotesMessages[0] = "hello";
    //where initializeGallery was
-        Log.i("GOTHERE MESSAGE", "" + closestNotesMessages[0]);
-        initializeGallery();
-        Log.i("GOTHERE", "the AR 6");
+//        Log.i("GOTHERE MESSAGE", "" + closestNotesMessages[0]);
+//        initializeGallery();
+//        Log.i("GOTHERE", "the AR 6");
     }
 
     private String generateFilename() {
