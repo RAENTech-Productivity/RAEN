@@ -1,2 +1,5 @@
-include ':app', ':stickynote'
-project(':app').projectDir = new File('February Final/app')
+include':app'
+include':coding-push'
+include ':push-dir:coding-push'
+include ":push-akathait"
+include ":push-dir:push-akathait"
