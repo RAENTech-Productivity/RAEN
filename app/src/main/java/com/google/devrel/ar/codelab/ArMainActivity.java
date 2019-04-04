@@ -27,7 +27,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.HandlerThread;
-import android.os.Looper;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.FileProvider;
@@ -39,7 +38,6 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import android.util.Log;
 import android.view.PixelCopy;
-import android.view.SurfaceHolder;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -59,30 +57,23 @@ import com.google.ar.core.Trackable;
 import com.google.ar.core.TrackingState;
 import com.google.ar.sceneform.AnchorNode;
 import com.google.ar.sceneform.ArSceneView;
-import com.google.ar.sceneform.Scene;
 import com.google.ar.sceneform.rendering.ModelRenderable;
 import com.google.ar.sceneform.rendering.Renderable;
-import com.google.ar.sceneform.rendering.Renderer;
 import com.google.ar.sceneform.ux.ArFragment;
 import com.google.ar.sceneform.ux.TransformableNode;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.nio.ByteBuffer;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
-public class MainActivity extends AppCompatActivity {
+public class ArMainActivity extends AppCompatActivity {
 
     private ArFragment fragment;
     private PointerDrawable pointer = new PointerDrawable();
@@ -99,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_ar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -250,7 +241,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     saveBitmapToDisk(bitmap, filename);
                 } catch (IOException e) {
-                    Toast toast = Toast.makeText(MainActivity.this, e.toString(),
+                    Toast toast = Toast.makeText(ArMainActivity.this, e.toString(),
                             Toast.LENGTH_LONG);
                     toast.show();
                     return;
@@ -260,8 +251,8 @@ public class MainActivity extends AppCompatActivity {
                 snackbar.setAction("Open in Photos", v -> {
                     File photoFile = new File(filename);
 
-                    Uri photoURI = FileProvider.getUriForFile(MainActivity.this,
-                            MainActivity.this.getPackageName() + ".ar.codelab.name.provider",
+                    Uri photoURI = FileProvider.getUriForFile(ArMainActivity.this,
+                            ArMainActivity.this.getPackageName() + ".ar.codelab.name.provider",
                             photoFile);
                     Intent intent = new Intent(Intent.ACTION_VIEW, photoURI);
                     intent.setDataAndType(photoURI, "image/*");
@@ -271,7 +262,7 @@ public class MainActivity extends AppCompatActivity {
                 });
                 snackbar.show();
             } else {
-                Toast toast = Toast.makeText(MainActivity.this,
+                Toast toast = Toast.makeText(ArMainActivity.this,
                         "Failed to copyPixels: " + copyResult, Toast.LENGTH_LONG);
                 toast.show();
             }
