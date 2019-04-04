@@ -51,14 +51,6 @@
         <!--app:layout_constraintTop_toTopOf="parent"-->
         <!--/>-->
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="top"
-        android:ems="10"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/add_text_button"
@@ -73,15 +65,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         />
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="357dp"
-        android:layout_height="52dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Enter Message for Sticky Note Here"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="181dp" />
+    <MultiAutoCompleteTextView
+        android:id="@+id/add_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Type your message here."
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+        <!--app:layout_constraintStart_toStartOf="parent" />-->
 
     <!--<AutoCompleteTextView-->
         <!--android:id="@+id/autoCompleteTextView"-->

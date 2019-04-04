@@ -1,3 +1,18 @@
+/*
+Copyright 2018 Google LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    https://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+*/
 package com.google.devrel.ar.codelab;
 
 import android.content.Intent;
@@ -88,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        try {
             GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
                     .setEventKey("LOAD_MESSAGE")
                     .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>() {
@@ -148,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
                                     }
 
                                     closestNotesMessages[i] = renderable_message;
+                                    Log.i("GOTHERE MESSAGES", "" + closestNotesMessages[i]);
 
 //                               PLEASE KEEP THESE PRINT STATEMENTS FOR FUTURE TESTING!!!
 
@@ -171,10 +186,9 @@ public class MainActivity extends AppCompatActivity {
 
                         }
                     });
-        }
-        finally {
-            initializeGallery();
-        }
+
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -188,8 +202,11 @@ public class MainActivity extends AppCompatActivity {
             onUpdate();
         });
 
-        //where initializeGallery was
-        Log.i("GOTHERE", "the AR 6");
+//        closestNotesMessages[0] = "hello";
+   //where initializeGallery was
+//        Log.i("GOTHERE MESSAGE", "" + closestNotesMessages[0]);
+//        initializeGallery();
+//        Log.i("GOTHERE", "the AR 6");
     }
 
     private String generateFilename() {
@@ -402,7 +419,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void createPNG(String text) {
 //        String text = "This \nis \nmultiline";
-        Log.i("GOTHERE MESSAGE", text);
+//        Log.i("GOTHERE MESSAGE", text);
 
         final Rect bounds = new Rect();
         TextPaint textPaint = new TextPaint() {
@@ -440,19 +457,19 @@ public class MainActivity extends AppCompatActivity {
 
         } finally {
 
-            try {
-                FileOutputStream stream = new FileOutputStream(file); //create your FileOutputStream here
-                bmp.compress(Bitmap.CompressFormat.PNG, 85, stream);
-                bmp.recycle();
-                try {
-                    stream.close();
-                } catch (IOException e) {
-                    //
-                }
-            }
-            catch (FileNotFoundException e1) {
-                // put print statement
-            }
+           try {
+               FileOutputStream stream = new FileOutputStream(file); //create your FileOutputStream here
+               bmp.compress(Bitmap.CompressFormat.PNG, 85, stream);
+               bmp.recycle();
+               try {
+                   stream.close();
+               } catch (IOException e) {
+                   //
+               }
+           }
+           catch (FileNotFoundException e1) {
+               // put print statement
+           }
 
         }
 
@@ -461,3 +478,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+
+
