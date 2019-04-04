@@ -1,5 +1,5 @@
 include':app'
-include':coding-push'
-include ':push-dir:coding-push'
-include ":push-akathait"
-include ":push-dir:push-akathait"
+//include':coding-push'
+//include ':push-dir:coding-push'
+//include ":push-akathait"
+//include ":push-dir:push-akathait"
