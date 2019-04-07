@@ -56,7 +56,7 @@ public class ArIntro extends AppCompatActivity {
                 false, true);
         Log.i("GOTHEREGS", "initial GS");
         Log.i("GOTHEREGS", "GS:" + GSAndroidPlatform.gs());
-    authenticateGS();
+        authenticateGS();
 
         Button btn = (Button)findViewById(R.id.button);
 
