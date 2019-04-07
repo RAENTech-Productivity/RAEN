@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">Codelab</string>
+    <string name="app_name">RAENTech Productivity</string>
+    <string name="app_sticky_notes">RAENTech Notes</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_add_text">AddText</string>
     <string name="add_text_box">Edit text</string>
     <string name="add_text_button">Add Text to Sticky Note</string>
     <string name="title_activity_text_keyboard">TextKeyboard</string>
+    <string name="title_activity_ar_intro">ArIntro</string>
 </resources>

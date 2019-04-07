@@ -65,9 +65,11 @@ public class AddText extends AppCompatActivity {
 
 //        GSAndroidPlatform.initialise(this, "u374201md1E4", "ktbBEnAi7UjgzEFdlY8s9E892AqZoVnR", "device", false, false);
 
-        GSAndroidPlatform.initialise(this, "u374201md1E4", "ktbBEnAi7UjgzEFdlY8s9E892AqZoVnR", "device", true, true);
-        Log.i("GOTHEREGS", "initial GS");
-        Log.i("GOTHEREGS", "GS:" + GSAndroidPlatform.gs());
+//        GSAndroidPlatform.initialise(this, "u374201md1E4", "ktbBEnAi7UjgzEFdlY8s9E892AqZoVnR", "device", true, true);
+//        Log.i("GOTHEREGS", "initial GS");
+//        Log.i("GOTHEREGS", "GS:" + GSAndroidPlatform.gs());
+
+//        authenticateGS();
 
         Button btn = (Button)findViewById(R.id.add_text_button);
 
@@ -131,15 +133,15 @@ public class AddText extends AppCompatActivity {
         Log.i("GOTHERE END CREATE", "hit end of method");
     }
 
-    @Override
-    public void onStart()
-    {
-        super.onStart();
-
-        GSAndroidPlatform.gs().start();
-        Log.i("GOTHEREGS", "started GS");
-
-    }
+//    @Override
+//    public void onStart()
+//    {
+//        super.onStart();
+//
+//        GSAndroidPlatform.gs().start();
+//        Log.i("GOTHEREGS", "started GS");
+//
+//    }
 
     private void authenticateGS(){
         GSAndroidPlatform.gs().setOnAvailable(available -> {

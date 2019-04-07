@@ -8,6 +8,17 @@
         </compositeConfiguration>
         <option name="distributionType" value="DEFAULT_WRAPPED" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/coding-push" />
+            <option value="$PROJECT_DIR$/push-akathait" />
+            <option value="$PROJECT_DIR$/push-dir" />
+            <option value="$PROJECT_DIR$/push-dir/coding-push" />
+            <option value="$PROJECT_DIR$/push-dir/push-akathait" />
+          </set>
+        </option>
         <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
