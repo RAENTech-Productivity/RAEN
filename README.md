@@ -1,6 +1,6 @@
-## Welcome to GitHub Pages
+## RAENTech Productivity
 
-You can use the [editor on GitHub](https://github.com/RAENTech-Productivity/RAEN/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Please visit our website [RAENTech](https://raentech.weebly.com/) for more information about our project.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
