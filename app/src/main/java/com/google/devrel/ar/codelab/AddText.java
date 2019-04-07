@@ -41,110 +41,65 @@ public class AddText extends AppCompatActivity {
         MultiAutoCompleteTextView txtView = (MultiAutoCompleteTextView) findViewById(R.id.add_message);
         txtView.setGravity(Gravity.CENTER_HORIZONTAL);
         setSupportActionBar(toolbar);
-//        locationManager =  (LocationManager)getSystemService(Context.LOCATION_SERVICE);
-//        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-//        GameSparksAndroidApi.initialise(GS_SERVICE_API, GS_API_SECRET, this.getApplication());
-
-//        GSAndroidPlatform.initialise(this, "u374201md1E4", "ktbBEnAi7UjgzEFdlY8s9E892AqZoVnR", "device", false, false);
-
-//        GSAndroidPlatform.initialise(this, "u374201md1E4", "ktbBEnAi7UjgzEFdlY8s9E892AqZoVnR", "device", true, true);
-//        Log.i("GOTHEREGS", "initial GS");
-//        Log.i("GOTHEREGS", "GS:" + GSAndroidPlatform.gs());
-
-//        authenticateGS();
 
         Button btn = (Button)findViewById(R.id.add_text_button);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                authenticateGS();
-                Log.i("GOTHERECLICK", "button");
-                Location location = toggleBestUpdates();
-                Log.i("GOTHERECLICK", ""+location);
 
-                double lat;
-                double lon;
-                double bearing;
-                String messageText;
+                try {
+                    Log.i("GOTHERECLICK", "button");
+                    Location location = toggleBestUpdates();
+                    Log.i("GOTHERELOCATION", "" + location);
 
-                if (location != null) {
-                    lat = location.getLatitude();
+                    double lat;
+                    double lon;
+                    double bearing;
+                    String messageText;
 
-                    lon = location.getLongitude();
-                    bearing = location.getBearing();
+                    if (location != null) {
+                        lat = location.getLatitude();
+
+                        lon = location.getLongitude();
+                        bearing = location.getBearing();
 
 //                    Log.i("GOTHERECLICK", "LAT: "+ lat);
 //                    Log.i("GOTHERECLICK", "LAT: "+ lat);
-                }
-                else{
-                    lat = 0;
-                    lon = 0;
-                    bearing = 0;
-                }
-                MultiAutoCompleteTextView textView =(MultiAutoCompleteTextView)findViewById(R.id.add_message);
-                messageText = textView.getText().toString();
-                GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
-                        .setEventKey("SAVE_GEO_MESSAGE")
-                        .setEventAttribute("LAT", ""+ lat )
-                        .setEventAttribute("LON", "" + lon)
-                        .setEventAttribute("TEXT", "" +messageText)
-                        .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>()
-                        {
-                            @Override
-                            public void onEvent(GSResponseBuilder.LogEventResponse logEventResponse)
-                            {
-                                if (!logEventResponse.hasErrors()) {
-                                    //DO something
-                                    Log.i("GOTHERE", "the connection worked");
-                                } else {
-                                    Log.i("GOTHERE", "connection failed");
-                                    Log.i("GOTHEREDATA", logEventResponse.toString());
+                    } else {
+                        lat = 0;
+                        lon = 0;
+                        bearing = 0;
+                    }
+                    MultiAutoCompleteTextView textView = (MultiAutoCompleteTextView) findViewById(R.id.add_message);
+                    messageText = textView.getText().toString();
+                    GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
+                            .setEventKey("SAVE_GEO_MESSAGE")
+                            .setEventAttribute("LAT", "" + lat)
+                            .setEventAttribute("LON", "" + lon)
+                            .setEventAttribute("TEXT", "" + messageText)
+                            .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>() {
+                                @Override
+                                public void onEvent(GSResponseBuilder.LogEventResponse logEventResponse) {
+                                    if (!logEventResponse.hasErrors()) {
+                                        //DO something
+                                        Log.i("GOTHERE", "the connection worked");
+                                    } else {
+                                        Log.i("GOTHERE", "connection failed");
+                                        Log.i("GOTHEREDATA", logEventResponse.toString());
+                                    }
+                                    Log.i("GOTHEREDATA", "completed event");
                                 }
-                                Log.i("GOTHEREDATA", "completed event");
-                            }
 
-                        });
+                            });
+                }
 
-                Log.i("GOTHERE", "about to start");
-                startActivity(new Intent(AddText.this, ArMainActivity.class));
-                Log.i("GOTHERE", "started activity");
+                finally {
+                    Log.i("GOTHERE", "about to start");
+                    startActivity(new Intent(AddText.this, ArMainActivity.class));
+                    Log.i("GOTHERE", "started activity");
+                }
 
-            }
-        });
-        Log.i("GOTHERE END CREATE", "hit end of method");
-    }
-
-//    @Override
-//    public void onStart()
-//    {
-//        super.onStart();
-//
-//        GSAndroidPlatform.gs().start();
-//        Log.i("GOTHEREGS", "started GS");
-//
-//    }
-
-    private void authenticateGS(){
-        GSAndroidPlatform.gs().setOnAvailable(available -> {
-            Log.i("GOTHEREGS", "on event 1");
-
-            if (available) {
-                Log.i("GOTHEREGS", "connection to GS");
-
-                //If we connect, authenticate our player
-                GSAndroidPlatform.gs().getRequestBuilder().createDeviceAuthenticationRequest().
-                        send(authenticationResponse -> {
-
-                            if(!authenticationResponse.hasErrors()){
-                                //Do something when we authenticate
-                                Log.i("GOTHEREGS", "authenticated");
-                            }
-                            else {
-                                Log.i("GOTHEREGS", "authentication failed");
-                            }
-
-                        });
             }
         });
     }
@@ -199,14 +154,15 @@ public class AddText extends AppCompatActivity {
             return null;
         }
         else {
-//            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
             Criteria criteria = new Criteria();
             criteria.setAccuracy(Criteria.ACCURACY_FINE);
             criteria.setAltitudeRequired(false);
             criteria.setBearingRequired(false);
             criteria.setCostAllowed(true);
             criteria.setPowerRequirement(Criteria.POWER_LOW);
-            String provider = locationManager.getBestProvider(criteria, true);
+            String provider = locationManager.getBestProvider(criteria, false);
+//            provider = LocationManager.GPS_PROVIDER;
             Log.i("GOTHERELOC", "provider:"+ provider);
             if(provider != null) {
                 if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
