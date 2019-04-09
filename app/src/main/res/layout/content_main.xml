@@ -16,15 +16,17 @@
         android:textColor="#075767"
         android:textSize="80sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.110000014" />
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="700dp"
         android:layout_height="625dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="116dp"
         android:adjustViewBounds="true"
         android:cropToPadding="true"
         android:src="@drawable/raindrop"
@@ -32,6 +34,7 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
+
     <Button
         android:id="@+id/button_mem"
         android:layout_width="100dp"
