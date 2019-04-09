@@ -113,7 +113,7 @@ public class ArMainActivity extends AppCompatActivity {
                                 float latitude;
                                 float longitude;
                                 String renderable_message;
-//
+
                                 for (int i = 0; i < 5; i++) {
                                     int second_colon = notes.indexOf(note_lon) + note_lon.length();
                                     int first_quote = second_colon + 1;
@@ -193,12 +193,12 @@ public class ArMainActivity extends AppCompatActivity {
             onUpdate();
         });
 
-//        closestNotesMessages[0] = "hello";
-   //where initializeGallery was
+        closestNotesMessages[0] = "hello";
+//   where initializeGallery was
         initializeGallery();
-//        Log.i("GOTHERE MESSAGE", "" + closestNotesMessages[0]);
-//        initializeGallery();
-//        Log.i("GOTHERE", "the AR 6");
+        Log.i("GOTHERE MESSAGE", "" + closestNotesMessages[0]);
+        initializeGallery();
+        Log.i("GOTHERE", "the end of AR onCreate");
     }
 
     private String generateFilename() {
