@@ -347,10 +347,10 @@ public class ArMainActivity extends AppCompatActivity {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
 
         // Once we get the message to write to a PNG:
-//        createPNG(closestNotesMessages[0]);
-//        int noteMessage = R.drawable.message_thumb; //need message to be placed in drawable with name "message_thumb.png"
+         createPNG(closestNotesMessages[0]);
+        int noteMessage = R.drawable.message_thumb; //need message to be placed in drawable with name "message_thumb.png"
 
-        int noteMessage = R.drawable.sticky_thumb;
+//        int noteMessage = R.drawable.sticky_thumb;
         ImageView andy = new ImageView(this);
         andy.setImageResource(R.drawable.droid_thumb);
         andy.setContentDescription("andy");
@@ -358,41 +358,46 @@ public class ArMainActivity extends AppCompatActivity {
         gallery.addView(andy);
 
         ImageView sticky = new ImageView(this);
-        //sticky.setImageResource(R.drawable.sticky_thumb);
-        sticky.setImageResource(noteMessage);
+        sticky.setImageResource(R.drawable.sticky_thumb);
+//        sticky.setImageResource(noteMessage);
         sticky.setContentDescription("sticky note");
         sticky.setOnClickListener(view ->{addObject(Uri.parse("model.sfb"));});
         gallery.addView(sticky);
+
+
+        ImageView user_note = new ImageView(this);
+        user_note.setImageResource(noteMessage);
+        user_note.setContentDescription("sticky note with message");
+        user_note.setOnClickListener(view ->{addObject(Uri.parse("model.sfb"));});
+        gallery.addView(user_note);
+
     }
     private void addObject(Uri model) {
         Frame frame = fragment.getArSceneView().getArFrame();
         Point pt = getScreenCenter();
-//        closestNotes = null;
-//
-//        if (closestNotes != null) {       //this one brings up the stored lat and lon
-//            List<HitResult> hits;
-//            if (frame != null) {
-//                for (int i = 0; i >= 10; i = i + 2) {
-//                    hits = frame.hitTest(closestNotes[i], closestNotes[i + 1]);
-//                    for (HitResult hit : hits) {
-//                        Trackable trackable = hit.getTrackable();
-//                        if ((trackable instanceof Plane && ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {
-//                            placeObject(fragment, hit.createAnchor(), model);
-//                            break;
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//
-//
-//        else{
+        closestNotes = null;
+
+        if (closestNotes != null) {       //this one brings up the stored lat and lon
+            List<HitResult> hits;
+            if (frame != null) {
+                for (int i = 0; i >= 10; i = i + 2) {
+                    hits = frame.hitTest(closestNotes[i], closestNotes[i + 1]);
+                    for (HitResult hit : hits) {
+                        Trackable trackable = hit.getTrackable();
+                        if ((trackable instanceof Plane && ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {
+                            placeObject(fragment, hit.createAnchor(), model);
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        else {
 
             List<HitResult> hits;
 
             if
-            (frame != null)
-            {
+            (frame != null) {
                 hits = frame.hitTest(pt.x, pt.y);
 
                 for (HitResult hit : hits) {
@@ -412,6 +417,7 @@ public class ArMainActivity extends AppCompatActivity {
 
             }
 //        }
+        }
     }
 
     private void placeObject(ArFragment fragment, Anchor anchor, Uri model) {
