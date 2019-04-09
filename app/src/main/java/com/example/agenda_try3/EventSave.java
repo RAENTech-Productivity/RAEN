@@ -47,8 +47,7 @@ public class EventSave extends AppCompatActivity {
         btnView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EventSave.this, EventList.class);
-                startActivity(intent);
+                startActivity(new Intent(EventSave.this, EventList.class));
             }
         });
 
@@ -57,8 +56,7 @@ public class EventSave extends AppCompatActivity {
 
     public void AddData(String newEntry) {
 
-        long result = myDB.addEvents(newEntry);
-        boolean insertData = myDB.addData(result);
+        boolean insertData = myDB.addData(newEntry);
 
         if(insertData==true){
             Toast.makeText(this, "Event Successfully Inserted!", Toast.LENGTH_LONG).show();
