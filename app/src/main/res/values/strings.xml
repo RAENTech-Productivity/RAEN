@@ -1,4 +1,9 @@
 <resources>
+    <string name="add">+</string>
+    <string name="btn_edit">Edit</string>
+    <string name="save">Save</string>
+    <string name="create_table">CREATE TABLE</string>
+    <string name="heading">Events</string>
     <string name="app_name">RAENTech Productivity</string>
     <string name="app_sticky_notes">RAENTech Notes</string>
     <string name="action_settings">Settings</string>
