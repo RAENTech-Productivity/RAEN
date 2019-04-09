@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".AddText"
+    tools:showIn="@layout/activity_add_text">
+
+    <!--<EditText-->
+        <!--android:id="@+id/editTextView"-->
+        <!--style="@style/Widget.AppCompat.EditText"-->
+        <!--android:layout_width="283dp"-->
+        <!--android:layout_height="148dp"-->
+        <!--android:layout_marginStart="51dp"-->
+        <!--android:layout_marginTop="181dp"-->
+        <!--android:layout_marginEnd="50dp"-->
+        <!--android:layout_marginBottom="85dp"-->
+        <!--android:backgroundTint="@android:color/holo_blue_bright"-->
+        <!--android:dropDownWidth="match_parent"-->
+        <!--android:dropDownHeight="match_parent"-->
+        <!--android:popupBackground="@drawable/sticky_thumb"-->
+        <!--android:inputType="text"-->
+        <!--android:focusable="true"-->
+        <!--android:clickable="true"-->
+        <!--android:windowSoftInputMode="adjustPan"-->
+        <!--android:text="@string/add_text_box"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/add_text_button"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--<requestFocus />-->
+    <!--/>-->
+    <!--<EditText-->
+        <!--android:id="@+id/editText"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:ems="10"-->
+        <!--android:hint="@string/add_text_box"-->
+        <!--android:paddingStart="10dp"-->
+        <!--android:paddingEnd="10dp"-->
+        <!--android:clickable="true"-->
+        <!--android:focusable="true"-->
+        <!--android:textIsSelectable="true"-->
+        <!--android:inputType="textAutoCorrect"-->
+        <!--android:imeOptions="actionSend"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/add_text_button"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--/>-->
+
+
+    <Button
+        android:id="@+id/add_text_button"
+        android:layout_width="203dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="49dp"
+        android:completionThreshold="1"
+        android:text="@string/add_text_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/add_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Type your message here."
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+        <!--app:layout_constraintStart_toStartOf="parent" />-->
+
+    <!--<AutoCompleteTextView-->
+        <!--android:id="@+id/autoCompleteTextView"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="AutoCompleteTextView"-->
+        <!--android:inputType="textAutoCorrect"-->
+        <!--tools:layout_editor_absoluteX="111dp"-->
+        <!--tools:layout_editor_absoluteY="174dp" />-->
+
+
+</android.support.constraint.ConstraintLayout>

@@ -3,7 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/RAEN.iml" filepath="$PROJECT_DIR$/RAEN.iml" />
+      <module fileurl="file://$PROJECT_DIR$/coding-push/RAEN-coding-push.iml" filepath="$PROJECT_DIR$/coding-push/RAEN-coding-push.iml" />
+      <module fileurl="file://$PROJECT_DIR$/push-akathait/RAEN-push-akathait.iml" filepath="$PROJECT_DIR$/push-akathait/RAEN-push-akathait.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/push-dir/push-dir.iml" filepath="$PROJECT_DIR$/push-dir/push-dir.iml" />
+      <module fileurl="file://$PROJECT_DIR$/push-dir/coding-push/push-dir-coding-push.iml" filepath="$PROJECT_DIR$/push-dir/coding-push/push-dir-coding-push.iml" />
+      <module fileurl="file://$PROJECT_DIR$/push-dir/push-akathait/push-dir-push-akathait.iml" filepath="$PROJECT_DIR$/push-dir/push-akathait/push-dir-push-akathait.iml" />
     </modules>
   </component>
 </project>
