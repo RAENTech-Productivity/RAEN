@@ -1,13 +1,14 @@
-package com.example.agenda_try3;
+package com.google.devrel.ar.codelab;
 
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.google.devrel.ar.codelab.DataBaseHelper;
 
 import java.util.ArrayList;
 

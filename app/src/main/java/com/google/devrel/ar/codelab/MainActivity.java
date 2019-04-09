@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent i = new Intent(MainActivity.this, memos.class);
                 startActivity(i);
             case R.id.button_agenda:
-                Intent ii = new Intent(MainActivity.this, Agenda.class);
+                Intent ii = new Intent(MainActivity.this, Agenda_MainActivity.class);
                 startActivity(ii);
             case R.id.button_note:
                 Intent iii = new Intent(MainActivity.this, ArIntro.class);

@@ -1,6 +1,8 @@
-package com.example.agenda_try3;
+package com.google.devrel.ar.codelab;
 
 import android.os.Environment;
+
+import com.google.devrel.ar.codelab.Day;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;

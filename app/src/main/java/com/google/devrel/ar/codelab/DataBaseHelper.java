@@ -1,4 +1,4 @@
-package com.example.agenda_try3;
+package com.google.devrel.ar.codelab;
 
 import android.content.ContentValues;
 import android.content.Context;

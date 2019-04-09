@@ -1,4 +1,4 @@
-package com.example.agenda_try3;
+package com.google.devrel.ar.codelab;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +8,8 @@ import android.widget.Button;
 import android.widget.CalendarView;
 
 import java.util.ArrayList;
-import java.util.logging.FileHandler;
 
-public class MainActivity extends AppCompatActivity {
+public class Agenda_MainActivity extends AppCompatActivity {
 
     CalendarView cv;
 
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_agenda);
 
         FilingStuff fh = new FilingStuff();
         Sched = fh.deserializeObject();
@@ -30,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void sendMessage(View view)
     {
-        Intent intent = new Intent(MainActivity.this, EventSave.class);
+        Intent intent = new Intent(Agenda_MainActivity.this, EventSave.class);
         startActivity(intent);
     }
 

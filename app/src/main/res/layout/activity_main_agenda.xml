@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<android.support.v7.widget.ContentFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="64dp"
+    tools:context=".MainActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <CalendarView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="true"
+        ></CalendarView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="23dp"
+            android:layout_marginBottom="38dp"
+            android:background="@drawable/bg_button"
+            android:elevation="20dp"
+            android:text="@string/add"
+            android:textColor="#fff"
+            android:textSize="45sp"
+            android:onClick="sendMessage"
+            />
+    </RelativeLayout>
+
+
+
+
+</android.support.v7.widget.ContentFrameLayout>
