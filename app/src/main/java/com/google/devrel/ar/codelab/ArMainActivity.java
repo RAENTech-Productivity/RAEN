@@ -346,11 +346,11 @@ public class ArMainActivity extends AppCompatActivity {
     private void initializeGallery() {
         LinearLayout gallery = findViewById(R.id.gallery_layout);
 
-        // Once we get the message to write to a PNG:
-         createPNG(closestNotesMessages[0]);
-        int noteMessage = R.drawable.message_thumb; //need message to be placed in drawable with name "message_thumb.png"
+        //Once we get the message to write to a PNG:
+        //createPNG(closestNotesMessages[0]);
+        //int noteMessage = R.drawable.message_thumb; //need message to be placed in drawable with name "message_thumb.png"
 
-//        int noteMessage = R.drawable.sticky_thumb;
+        //int noteMessage = R.drawable.sticky_thumb;
         ImageView andy = new ImageView(this);
         andy.setImageResource(R.drawable.droid_thumb);
         andy.setContentDescription("andy");
@@ -365,11 +365,11 @@ public class ArMainActivity extends AppCompatActivity {
         gallery.addView(sticky);
 
 
-        ImageView user_note = new ImageView(this);
-        user_note.setImageResource(noteMessage);
-        user_note.setContentDescription("sticky note with message");
-        user_note.setOnClickListener(view ->{addObject(Uri.parse("model.sfb"));});
-        gallery.addView(user_note);
+//        ImageView user_note = new ImageView(this);
+//        user_note.setImageResource(noteMessage);
+//        user_note.setContentDescription("sticky note with message");
+//        user_note.setOnClickListener(view ->{addObject(Uri.parse("model.sfb"));});
+//        gallery.addView(user_note);
 
     }
     private void addObject(Uri model) {
