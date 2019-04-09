@@ -27,7 +27,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, " + "DAY TEXT, "+ "ITEM1 TEXT)");
-    Log.i("GOTHERE", "created table");
     }
 
     @Override
@@ -38,6 +37,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
 
     public boolean addData(String item1){
+        db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put(COL3, item1);
 
