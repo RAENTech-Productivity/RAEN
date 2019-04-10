@@ -83,6 +83,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".Agenda_MainActivity">
+        </activity>
         <activity android:name=".Agenda"/>
         <activity android:name=".memos" />
         <activity android:name=".Notes" />

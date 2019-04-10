@@ -1,24 +1,16 @@
 package com.google.devrel.ar.codelab;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListAdapter;
-import android.widget.ListView;
 import android.widget.Toast;
-
-import com.example.agenda_try3.DataBaseHelper;
-
-import java.util.ArrayList;
 
 public class EventSave extends AppCompatActivity {
 
-    com.example.agenda_try3.DataBaseHelper myDB;
+    DataBaseHelper myDB;
     Button btnSave, btnView;
     EditText editT;
 
