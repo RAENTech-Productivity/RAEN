@@ -1,4 +1,4 @@
-package com.example.agenda_try3;
+package com.google.devrel.ar.codelab;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -12,11 +12,13 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.agenda_try3.DataBaseHelper;
+
 import java.util.ArrayList;
 
 public class EventSave extends AppCompatActivity {
 
-    DataBaseHelper myDB;
+    com.example.agenda_try3.DataBaseHelper myDB;
     Button btnSave, btnView;
     EditText editT;
 
