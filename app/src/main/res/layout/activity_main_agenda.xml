@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="64dp"
-    tools:context=".MainActivity">
+    tools:context=".Agenda_MainActivity">
 
     <CalendarView
         android:layout_width="match_parent"
@@ -35,8 +35,5 @@
             android:onClick="sendMessage"
             />
     </RelativeLayout>
-
-
-
 
 </android.support.v7.widget.ContentFrameLayout>

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,15 +28,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.button_mem:
+            case R.id.button_mem: {
                 Intent i = new Intent(MainActivity.this, memos.class);
+                Log.i("GOTHERE", "Memos button pressed");
                 startActivity(i);
-            case R.id.button_agenda:
+                break;
+            }
+            case R.id.button_agenda: {
+                Log.i("GOTHERE", "Agenda button pressed");
                 Intent ii = new Intent(MainActivity.this, Agenda_MainActivity.class);
                 startActivity(ii);
-            case R.id.button_note:
+                break;
+            }
+            case R.id.button_note: {
+                Log.i("GOTHERE", "Sticky notes button pressed");
                 Intent iii = new Intent(MainActivity.this, ArIntro.class);
                 startActivity(iii);
+                break;
+            }
         }
 
     }
