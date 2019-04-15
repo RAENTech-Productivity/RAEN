@@ -193,10 +193,10 @@ public class ArMainActivity extends AppCompatActivity {
             onUpdate();
         });
 
-        closestNotesMessages[0] = "hello";
+//        closestNotesMessages[0] = "hello";
 //   where initializeGallery was
         initializeGallery();
-        Log.i("GOTHERE MESSAGE", "" + closestNotesMessages[0]);
+        Log.i("GOTHERE MESSAGE", "" + closestNotesMessages);
 //        initializeGallery();
         Log.i("GOTHERE", "the end of AR onCreate");
     }
@@ -375,13 +375,14 @@ public class ArMainActivity extends AppCompatActivity {
     private void addObject(Uri model) {
         Frame frame = fragment.getArSceneView().getArFrame();
         Point pt = getScreenCenter();
-        closestNotes = null;
 
         if (closestNotes != null) {       //this one brings up the stored lat and lon
             List<HitResult> hits;
             if (frame != null) {
                 for (int i = 0; i >= 10; i = i + 2) {
                     hits = frame.hitTest(closestNotes[i], closestNotes[i + 1]);
+                    Log.i("GOTHEREDATA", "Closest Note Lat: "+ closestNotes[i]);
+                    Log.i("GOTHEREDATA", "Closest Note Lon: "+ closestNotes[i+1]);
                     for (HitResult hit : hits) {
                         Trackable trackable = hit.getTrackable();
                         if ((trackable instanceof Plane && ((Plane) trackable).isPoseInPolygon(hit.getHitPose()))) {

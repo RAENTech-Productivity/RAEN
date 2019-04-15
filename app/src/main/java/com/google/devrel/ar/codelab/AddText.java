@@ -162,7 +162,7 @@ public class AddText extends AppCompatActivity {
             criteria.setCostAllowed(true);
             criteria.setPowerRequirement(Criteria.POWER_LOW);
             String provider = locationManager.getBestProvider(criteria, false);
-//            provider = LocationManager.GPS_PROVIDER;
+            provider = LocationManager.GPS_PROVIDER;
             Log.i("GOTHERELOC", "provider:"+ provider);
             if(provider != null) {
                 if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
