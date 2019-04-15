@@ -73,3 +73,5 @@ sceneform.asset('sampledata/models/model.obj',
         'default',
         'sampledata/models/model.sfa',
         'src/main/assets/model')
+
+
