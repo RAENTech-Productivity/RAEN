@@ -27,35 +27,27 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
 
-        <activity android:name=".Agenda"></activity>
-        <activity android:name=".memos" />
-        <activity android:name=".Notes" />
-
-
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"
-            >
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".ArIntro"
             android:label="@string/app_sticky_notes"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!-- <action android:name="android.intent.action.MAIN" /> -->
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ArMainActivity"
             android:label="@string/app_sticky_notes"
@@ -81,6 +73,14 @@
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".Agenda_MainActivity"
+            android:label="@string/title_activity_agenda__main"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".memos" />
+        <activity android:name=".EventList" />
+        <activity android:name=".EventSave" />
 
         <meta-data
             android:name="com.google.ar.core"
