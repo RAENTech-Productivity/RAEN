@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:clickable="true"
+        android:id="@+id/calendarView"
         ></CalendarView>
 
     <RelativeLayout

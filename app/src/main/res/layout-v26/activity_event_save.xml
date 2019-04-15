@@ -13,7 +13,7 @@
         android:layout_marginTop="150dp"
         android:id="@+id/editStuff"
         android:inputType=""
-        android:autofillHints="" tools:targetApi="o"/>
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/btnSave"

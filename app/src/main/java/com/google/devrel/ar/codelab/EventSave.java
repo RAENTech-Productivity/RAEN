@@ -33,7 +33,7 @@ public class EventSave extends AppCompatActivity {
                 if(editT.length()!=0){
                     AddData(newEntry);
                     editT.setText("");}
-                    else
+                else
                 {Toast.makeText(EventSave.this, "Put something in the text field",Toast.LENGTH_LONG).show();}
             }
         });
