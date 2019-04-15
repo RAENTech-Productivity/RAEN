@@ -78,9 +78,7 @@
             android:name=".Agenda_MainActivity"
             android:label="@string/title_activity_agenda__main"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".Agenda" />
         <activity android:name=".memos" />
-        <activity android:name=".Notes" />
         <activity android:name=".EventList" />
         <activity android:name=".EventSave" />
 
