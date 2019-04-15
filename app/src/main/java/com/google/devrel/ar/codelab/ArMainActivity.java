@@ -197,7 +197,7 @@ public class ArMainActivity extends AppCompatActivity {
 //   where initializeGallery was
         initializeGallery();
         Log.i("GOTHERE MESSAGE", "" + closestNotesMessages[0]);
-        initializeGallery();
+//        initializeGallery();
         Log.i("GOTHERE", "the end of AR onCreate");
     }
 
