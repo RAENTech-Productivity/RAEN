@@ -11,29 +11,56 @@
     <CalendarView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:clickable="true"
+        android:focusable="true"
+        android:id="@+id/calendarView"
+        android:layout_marginTop="100dp"
         ></CalendarView>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!--<Button-->
+        <!--android:id="@+id/button2"-->
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_marginEnd="23dp"-->
+        <!--android:layout_marginBottom="38dp"-->
+        <!--android:background="@drawable/bg_button"-->
+        <!--android:elevation="20dp"-->
+        <!--android:onClick="sendMessage"-->
+        <!--android:text="@string/add"-->
+        <!--android:textColor="#fff"-->
+        <!--android:textSize="45sp" />-->
+
+        <EditText
+            android:id="@+id/editStuff"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="450dp"
+            android:autofillHints=""
+            android:inputType=""
+            android:textAlignment="center"
+            tools:targetApi="o" />
+
         <Button
-            android:id="@+id/button2"
-            android:layout_width="60dp"
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="23dp"
-            android:layout_marginBottom="38dp"
-            android:background="@drawable/bg_button"
-            android:elevation="20dp"
-            android:text="@string/add"
-            android:textColor="#fff"
-            android:textSize="45sp"
-            android:onClick="sendMessage"
-            />
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="550dp"
+            android:text="@string/save" />
+
+        <Button
+            android:id="@+id/btnView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/btnSave"
+            android:layout_marginTop="550dp"
+            android:text="@string/view_events" />
     </RelativeLayout>
 
 </android.support.v7.widget.ContentFrameLayout>

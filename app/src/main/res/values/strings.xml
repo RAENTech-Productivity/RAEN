@@ -13,4 +13,5 @@
     <string name="title_activity_text_keyboard">TextKeyboard</string>
     <string name="title_activity_ar_intro">ArIntro</string>
     <string name="title_activity_agenda__main">Agenda_MainActivity</string>
+    <string name="view_events">View Events</string>
 </resources>
