@@ -10,7 +10,7 @@ import android.util.Log;
 public class DataBaseHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "mylist.db";
-    public static final String TABLE_NAME = "mylist_data";
+    public static final String TABLE_NAME = "event_table";
     public static final String COL1 = "ID";
     public static final String COL2 = "ITEM1";
 

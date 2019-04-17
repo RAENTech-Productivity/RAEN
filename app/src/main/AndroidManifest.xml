@@ -82,7 +82,6 @@
         <activity android:name=".memos" />
         <activity android:name=".Notes" />
         <activity android:name=".EventList" />
-        <activity android:name=".EventSave" />
 
         <meta-data
             android:name="com.google.ar.core"

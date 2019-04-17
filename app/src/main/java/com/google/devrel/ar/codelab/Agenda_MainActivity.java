@@ -30,11 +30,13 @@ public class Agenda_MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_agenda);
 
+        editText = (EditText) findViewById(R.id.editStuff);
+
         FilingStuff fh = new FilingStuff();
         sched = fh.deserializeObject();
         calendarView = this.findViewById(R.id.calendarView);
 
-        editText = (EditText) findViewById(R.id.editStuff);
+
         btnAdd = (Button) findViewById(R.id.btnSave);
         btnView = (Button) findViewById(R.id.btnView);
         myDB = new DataBaseHelper(this);
