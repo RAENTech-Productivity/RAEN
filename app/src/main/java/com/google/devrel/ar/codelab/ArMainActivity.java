@@ -79,6 +79,9 @@ public class ArMainActivity extends AppCompatActivity {
     private PointerDrawable pointer = new PointerDrawable();
     private boolean isTracking;
     private boolean isHitting;
+
+    private float lat;
+    private float lon; //maybe need to be global... we'll see
     float [] closestNotes = new float[10];
     String [] closestNotesMessages = new String[5];
 
@@ -193,9 +196,9 @@ public class ArMainActivity extends AppCompatActivity {
 //        closestNotesMessages[0] = "hello";
 //   where initializeGallery was
         initializeGallery();
-//        Log.i("GOTHERE MESSAGE", "" + closestNotesMessages);
+        Log.i("GOTHERE MESSAGE", "" + closestNotesMessages);
 //        initializeGallery();
-//        Log.i("GOTHERE", "the end of AR onCreate");
+        Log.i("GOTHERE", "the end of AR onCreate");
     }
 
     private String generateFilename() {
@@ -390,7 +393,7 @@ public class ArMainActivity extends AppCompatActivity {
                 }
             }
         }
-        else {
+
 
             List<HitResult> hits;
 
@@ -416,7 +419,6 @@ public class ArMainActivity extends AppCompatActivity {
             }
 //        }
         }
-    }
 
     private void placeObject(ArFragment fragment, Anchor anchor, Uri model) {
         CompletableFuture<Void> renderableFuture =

@@ -12,21 +12,18 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "mylist.db";
     public static final String TABLE_NAME = "event_table";
     public static final String COL1 = "ID";
-    public static final String COL2 = "DAY";
-    public static final String COL3 = "ITEM1";
-    public SQLiteDatabase db;
+    public static final String COL2 = "ITEM1";
 
-    public long result;
 
-    public DataBaseHelper(Context context)
-    {
+    public DataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
-        db = this.getWritableDatabase();
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, " + "DAY TEXT, "+ "ITEM1 TEXT)");
+        String createTable = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                " ITEM1 TEXT)";
+        db.execSQL(createTable);
     }
 
     @Override
@@ -35,22 +32,24 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public boolean addData(String item1) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL2, item1);
 
-    public boolean addData(String item1){
-        db = this.getWritableDatabase();
-        ContentValues cv = new ContentValues();
-        cv.put(COL3, item1);
+        long result = db.insert(TABLE_NAME, null, contentValues);
 
-        long result = db.insert(TABLE_NAME, null, cv);
-
-        if(result == -1)
-        {return false;}
-        else
-        {return true;}
+        //if date as inserted incorrectly it will return -1
+        if (result == -1) {
+            return false;
+        } else {
+            return true;
+        }
     }
-
     public Cursor getListContents(){
+        SQLiteDatabase db = this.getWritableDatabase();
         Cursor data = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
         return data;
     }
 }
+
