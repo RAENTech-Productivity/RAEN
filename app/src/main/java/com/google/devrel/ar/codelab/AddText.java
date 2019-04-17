@@ -31,7 +31,6 @@ public class AddText extends AppCompatActivity {
 
     LocationManager locationManager;
     double longitudeBest, latitudeBest;
-    boolean locationPermission = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +47,6 @@ public class AddText extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
                 try {
 //                    Log.i("GOTHERECLICK", "button");
@@ -95,9 +93,6 @@ public class AddText extends AppCompatActivity {
                 }
 
                 finally {
-                    while (locationPermission = false) {
-
-                    }
                     startActivity(new Intent(AddText.this, ArMainActivity.class));
                 }
 
