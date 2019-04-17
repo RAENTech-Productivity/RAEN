@@ -21,7 +21,7 @@ public class EventSave extends AppCompatActivity {
         setContentView(R.layout.activity_event_save);
 
         btnSave = this.findViewById(R.id.btnSave);
-        editT = this.findViewById(R.id.editStuff);
+        editT = (EditText) this.findViewById(R.id.editStuff);
         btnView = this.findViewById(R.id.btnView);
         myDB = new DataBaseHelper(this);
 
