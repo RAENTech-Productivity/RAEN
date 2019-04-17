@@ -31,6 +31,7 @@ public class AddText extends AppCompatActivity {
 
     LocationManager locationManager;
     double longitudeBest, latitudeBest;
+    boolean locationPermission = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,10 +49,11 @@ public class AddText extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+
                 try {
-                    Log.i("GOTHERECLICK", "button");
+//                    Log.i("GOTHERECLICK", "button");
                     Location location = toggleBestUpdates();
-                    Log.i("GOTHERELOCATION", "" + location);
+//                    Log.i("GOTHERELOCATION", "" + location);
 
                     double lat;
                     double lon;
@@ -64,8 +66,6 @@ public class AddText extends AppCompatActivity {
                         lon = location.getLongitude();
                         bearing = location.getBearing();
 
-//                    Log.i("GOTHERECLICK", "LAT: "+ lat);
-//                    Log.i("GOTHERECLICK", "LAT: "+ lat);
                     } else {
                         lat = 0;
                         lon = 0;
@@ -95,9 +95,10 @@ public class AddText extends AppCompatActivity {
                 }
 
                 finally {
-                    Log.i("GOTHERE", "about to start");
+                    while (locationPermission = false) {
+
+                    }
                     startActivity(new Intent(AddText.this, ArMainActivity.class));
-                    Log.i("GOTHERE", "started activity");
                 }
 
             }
