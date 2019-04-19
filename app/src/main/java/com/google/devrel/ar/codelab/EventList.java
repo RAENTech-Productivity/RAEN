@@ -31,7 +31,7 @@ public class EventList extends AppCompatActivity {
             Toast.makeText(this, "No events yet",Toast.LENGTH_LONG).show();
         }else{
             while(data.moveToNext()){
-                theList.add(data.getString(1));
+                theList.add(data.getString(1) + "   " + data.getString(2));
                 ListAdapter listAdapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1,theList);
                 listView.setAdapter(listAdapter);
             }
