@@ -8,11 +8,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 public class DataBaseHelper extends SQLiteOpenHelper {
-
     public static final String DATABASE_NAME = "mylist.db";
-    public static final String TABLE_NAME = "event_table";
+    public static final String TABLE_NAME = "mylist_data";
     public static final String COL1 = "ID";
-    public static final String COL2 = "ITEM1";
+    public static final String COL2 = "DAY";
+    public static final String COL3 = "ITEM1";
 
 
     public DataBaseHelper(Context context) {
@@ -21,8 +21,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+//        String clearDBQuery = "DELETE FROM "+TABLE_NAME;
+//        db.execSQL(clearDBQuery);
         String createTable = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                " ITEM1 TEXT)";
+                " DAY TEXT, ITEM1 TEXT)";
         db.execSQL(createTable);
     }
 
@@ -32,10 +34,12 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean addData(String item1) {
+    public boolean addData(String item1, String date) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL2, item1);
+        Log.i("GOTHERE", "Date:" + date);
+        contentValues.put(COL3, item1);
+        contentValues.put(COL2, date);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
 
