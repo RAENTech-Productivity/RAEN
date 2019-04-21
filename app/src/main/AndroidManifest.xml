@@ -80,6 +80,12 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".memos" />
         <activity android:name=".EventList" />
+        <activity android:name=".EditActivity"></activity>
+        <activity android:name=".MemoMainActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="com.google.ar.core"

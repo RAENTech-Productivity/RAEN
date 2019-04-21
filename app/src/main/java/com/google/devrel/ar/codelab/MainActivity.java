@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button_mem: {
-                Intent i = new Intent(MainActivity.this, memos.class);
+                Intent i = new Intent(MainActivity.this, MemoMainActivity.class);
                 Log.i("GOTHERE", "Memos button pressed");
                 startActivity(i);
                 break;

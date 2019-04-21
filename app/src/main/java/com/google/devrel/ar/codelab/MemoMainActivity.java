@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 import com.google.devrel.ar.codelab.EditActivity;
 import com.google.devrel.ar.codelab.Memo;
-import com.google.devrel.ar.codelab.DatabaseAccess;
+import com.google.devrel.ar.codelab.DatabaseAccess ;
 
 import java.util.List;
 

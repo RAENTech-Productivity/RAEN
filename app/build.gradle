@@ -19,6 +19,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
+    buildToolsVersion "28.0.3"
     defaultConfig {
         applicationId "com.google.devrel.ar.codelab"
         minSdkVersion 24

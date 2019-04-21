@@ -69,26 +69,22 @@ public class AddText extends AppCompatActivity {
                         lon = 0;
                         bearing = 0;
                     }
-                    MultiAutoCompleteTextView textView = (MultiAutoCompleteTextView) findViewById(R.id.add_message);
+                    MultiAutoCompleteTextView textView = findViewById(R.id.add_message);
                     messageText = textView.getText().toString();
                     GSAndroidPlatform.gs().getRequestBuilder().createLogEventRequest()
                             .setEventKey("SAVE_GEO_MESSAGE")
                             .setEventAttribute("LAT", "" + lat)
                             .setEventAttribute("LON", "" + lon)
                             .setEventAttribute("TEXT", "" + messageText)
-                            .send(new GSEventConsumer<GSResponseBuilder.LogEventResponse>() {
-                                @Override
-                                public void onEvent(GSResponseBuilder.LogEventResponse logEventResponse) {
-                                    if (!logEventResponse.hasErrors()) {
-                                        //DO something
-                                        Log.i("GOTHERE", "the connection worked");
-                                    } else {
-                                        Log.i("GOTHERE", "connection failed");
-                                        Log.i("GOTHEREDATA", logEventResponse.toString());
-                                    }
-                                    Log.i("GOTHEREDATA", "completed event");
+                            .send(logEventResponse -> {
+                                if (!logEventResponse.hasErrors()) {
+                                    //DO something
+                                    Log.i("GOTHERE", "the connection worked");
+                                } else {
+                                    Log.i("GOTHERE", "connection failed");
+                                    Log.i("GOTHEREDATA", logEventResponse.toString());
                                 }
-
+                                Log.i("GOTHEREDATA", "completed event");
                             });
                 }
 
